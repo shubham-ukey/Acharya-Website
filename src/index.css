@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   DESIGN TOKENS — edit these RGB triplets to re-theme the whole site
+------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --c-forest: 23 74 58;        /* Deep Forest Green  #174A3A */
+    --c-forest-deep: 15 51 39;   /* Footer / dark surfaces #0F3327 */
+    --c-sage: 125 155 132;       /* Sage Green         #7D9B84 */
+    --c-sage-soft: 230 237 231;  /* Sage tint          #E6EDE7 */
+    --c-ivory: 247 245 239;      /* Warm Ivory         #F7F5EF */
+    --c-ivory-deep: 239 235 223; /* Ivory, one step deeper #EFEBDF */
+    --c-gold: 184 155 94;        /* Muted Gold         #B89B5E */
+    --c-charcoal: 32 39 36;      /* Charcoal           #202724 */
+  }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-ivory font-sans text-charcoal antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { @apply font-display text-forest; letter-spacing: -0.012em; }
+  img, svg { max-width: 100%; }
+  ::selection { background: rgb(var(--c-gold) / 0.35); }
+  :focus-visible { outline: 2px solid rgb(var(--c-gold)); outline-offset: 3px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }
+  .section-pad { @apply py-20 md:py-28; }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-forest;
+  }
+  .eyebrow::before { content: ''; @apply h-px w-8 bg-gold; }
+
+  .h-display { @apply text-4xl leading-[1.08] sm:text-5xl lg:text-[3.5rem]; }
+  .h-section { @apply text-3xl leading-[1.15] sm:text-4xl lg:text-[2.75rem]; }
+  .lede { @apply text-base leading-relaxed text-charcoal/75 sm:text-lg; }
+
+  .input {
+    @apply w-full rounded-xl border border-forest/15 bg-white px-4 py-3.5 text-[0.95rem] text-charcoal
+           placeholder:text-charcoal/40 transition focus:border-forest focus:outline-none focus:ring-4 focus:ring-forest/10;
+  }
+  .input[aria-invalid='true'] { @apply border-red-700/70 focus:ring-red-700/10; }
+
+  /* Long-form article styling (works with HTML coming from a CMS) */
+  .prose-article { @apply max-w-prose text-[1.05rem] leading-[1.85] text-charcoal/85; }
+  .prose-article p { @apply mb-6; }
+  .prose-article h2 { @apply mb-4 mt-12 text-2xl sm:text-3xl; }
+  .prose-article h3 { @apply mb-3 mt-8 text-xl; }
+  .prose-article ul { @apply mb-6 list-disc space-y-2 pl-6 marker:text-gold; }
+  .prose-article ol { @apply mb-6 list-decimal space-y-2 pl-6 marker:text-forest; }
+  .prose-article blockquote {
+    @apply my-10 border-l-2 border-gold pl-6 font-display text-xl italic leading-relaxed text-forest;
+  }
+  .prose-article img { @apply my-8 h-auto rounded-2xl; }
+  .prose-article figure { @apply my-8; }
+  .prose-article figcaption { @apply mt-2 text-center text-sm text-charcoal/60; }
+  .prose-article a { @apply text-forest underline decoration-gold underline-offset-4; }
+  .prose-article > p:first-child::first-letter {
+    @apply float-left mr-3 mt-1 font-display text-6xl leading-[0.85] text-forest;
+  }
+}

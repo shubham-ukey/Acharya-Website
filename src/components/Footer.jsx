@@ -1,0 +1,156 @@
+import { Link } from "react-router-dom";
+import {
+	Facebook,
+	Instagram,
+	Linkedin,
+	Mail,
+	MapPin,
+	Phone,
+	AtSign,
+} from "lucide-react";
+import Logo from "./Logo";
+import { brand } from "../config/brand";
+import { navLinks } from "./Navbar";
+
+const socials = [
+	{ key: "linkedin", Icon: Linkedin, label: "LinkedIn" },
+	{ key: "instagram", Icon: Instagram, label: "Instagram" },
+	{ key: "facebook", Icon: Facebook, label: "Facebook" },
+	{ key: "threads", Icon: AtSign, label: "Threads" },
+];
+
+const footerServices = [
+	{ label: "Thesis-to-Paper Conversion", hash: "thesis-to-paper" },
+	{ label: "Collaborative Projects", hash: "collaborative-projects" },
+	{ label: "Research Workshops", hash: "workshops-webinars" },
+	{ label: "Ayurveda Consultancy", hash: "ayurveda-consultancy" },
+];
+
+export default function Footer() {
+	const colTitle =
+		"text-xs font-semibold uppercase tracking-[0.18em] text-gold";
+	const link = "text-sm text-ivory/70 transition-colors hover:text-ivory";
+
+	return (
+		<footer className="bg-forest-deep text-ivory">
+			<div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1.1fr] lg:gap-10">
+				<div>
+					<Logo tone="light" />
+
+					<p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/70">
+						{brand.description}
+					</p>
+
+					<div className="mt-6 flex gap-3">
+						{socials.map(({ key, Icon, label }) => (
+							<a
+								key={key}
+								href={brand.social[key]}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={label}
+								className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ivory/20 text-ivory/80 transition hover:border-gold hover:text-gold"
+							>
+								<Icon size={17} />
+							</a>
+						))}
+					</div>
+				</div>
+
+				<nav aria-label="Quick links">
+					<h2
+						className={`${colTitle} !font-sans`}
+						style={{ color: "rgb(var(--c-gold))" }}
+					>
+						Quick Links
+					</h2>
+
+					<ul className="mt-5 space-y-3">
+						{navLinks.map((l) => (
+							<li key={l.to}>
+								<Link to={l.to} className={link}>
+									{l.label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+
+				<nav aria-label="Services">
+					<h2
+						className={`${colTitle} !font-sans`}
+						style={{ color: "rgb(var(--c-gold))" }}
+					>
+						Services
+					</h2>
+
+					<ul className="mt-5 space-y-3">
+						{footerServices.map((s) => (
+							<li key={s.hash}>
+								<Link to={`/services#${s.hash}`} className={link}>
+									{s.label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+
+				<div>
+					<h2
+						className={`${colTitle} !font-sans`}
+						style={{ color: "rgb(var(--c-gold))" }}
+					>
+						Contact
+					</h2>
+
+					<ul className="mt-5 space-y-4 text-sm text-ivory/70">
+						<li className="flex gap-3">
+							<Mail
+								size={17}
+								className="mt-0.5 shrink-0 text-gold"
+								aria-hidden="true"
+							/>
+							<a
+								className="break-all hover:text-ivory"
+								href={`mailto:${brand.email}`}
+							>
+								{brand.email}
+							</a>
+						</li>
+
+						<li className="flex gap-3">
+							<Phone
+								size={17}
+								className="mt-0.5 shrink-0 text-gold"
+								aria-hidden="true"
+							/>
+							<a
+								className="hover:text-ivory"
+								href={`tel:${brand.phone.replace(/\s/g, "")}`}
+							>
+								{brand.phone}
+							</a>
+						</li>
+
+						<li className="flex gap-3">
+							<MapPin
+								size={17}
+								className="mt-0.5 shrink-0 text-gold"
+								aria-hidden="true"
+							/>
+							<span>{brand.location}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div className="border-t border-ivory/10">
+				<div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ivory/60 sm:flex-row">
+					<p>© 2026 {brand.displayName}. All Rights Reserved.</p>
+					<p>Ayurveda • Yoga • Health Research</p>
+				</div>
+			</div>
+		</footer>
+	);
+}
+
