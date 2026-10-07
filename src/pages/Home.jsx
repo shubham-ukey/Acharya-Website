@@ -16,33 +16,34 @@ import useAsync from "../hooks/useAsync";
 import { fetchArticles } from "../services/articlesApi";
 import { services } from "../data/services";
 import { founders } from "../data/founders";
+import { pillars } from "../data/pillars";
 
-const pillars = [
-	{
-		n: "01",
-		icon: "Microscope",
-		title: "Scientific Approach",
-		text: "Every project starts with a clear question, a suitable design and transparent reporting.",
-	},
-	{
-		n: "02",
-		icon: "Leaf",
-		title: "Ayurveda Expertise",
-		text: "Classical knowledge is respected and translated carefully into testable research.",
-	},
-	{
-		n: "03",
-		icon: "Handshake",
-		title: "Collaborative Research",
-		text: "We work as partners with clinicians, institutes and organisations, not as outside vendors.",
-	},
-	{
-		n: "04",
-		icon: "BadgeCheck",
-		title: "Practical Outcomes",
-		text: "Papers, protocols, trained teams and products that people can actually use.",
-	},
-];
+// const pillars = [
+// 	{
+// 		n: "01",
+// 		icon: "Microscope",
+// 		title: "Scientific Approach",
+// 		text: "Every project starts with a clear question, a suitable design and transparent reporting.",
+// 	},
+// 	{
+// 		n: "02",
+// 		icon: "Leaf",
+// 		title: "Ayurveda Expertise",
+// 		text: "Classical knowledge is respected and translated carefully into testable research.",
+// 	},
+// 	{
+// 		n: "03",
+// 		icon: "Handshake",
+// 		title: "Collaborative Research",
+// 		text: "We work as partners with clinicians, institutes and organisations, not as outside vendors.",
+// 	},
+// 	{
+// 		n: "04",
+// 		icon: "BadgeCheck",
+// 		title: "Practical Outcomes",
+// 		text: "Papers, protocols, trained teams and products that people can actually use.",
+// 	},
+// ];
 
 const capabilities = [
 	"Clinical research",
@@ -287,57 +288,86 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+{/* =========================================
+    WHY WORK WITH US
+========================================= */}
+<section className="section-pad overflow-hidden">
+	<div className="container-x">
+		<SectionHeading
+			eyebrow="Why Work With Us"
+			title="Research With Purpose. Knowledge With Impact."
+			align="center"
+		/>
 
-			{/* =========================================
-			    WHY WORK WITH US
-			========================================= */}
-			<section className="section-pad">
-				<div className="container-x">
-					<SectionHeading
-						eyebrow="Why Work With Us"
-						title="Research With Purpose. Knowledge With Impact."
-						align="center"
-					/>
+		<div className="mt-16 space-y-16 lg:space-y-20">
+			{pillars.map((p, index) => {
+				const Icon = getIcon(p.icon);
 
+				return (
 					<div
-						className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0"
-						data-stagger
+						key={p.n}
+						className="why-pillar grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
 					>
-						{pillars.map((p) => {
-							const Icon = getIcon(p.icon);
+						{/* IMAGE */}
+						<div
+							className={`why-pillar-image overflow-hidden rounded-[2rem] ${
+								index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+							}`}
+						>
+							<div className="group relative aspect-[4/3] overflow-hidden rounded-[2rem]">
+								<img
+									src={p.image}
+									alt={p.title}
+									className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+									loading="lazy"
+								/>
 
-							return (
-								<div
-									key={p.n}
-									className="lg:border-l lg:border-forest/15 lg:px-8 lg:first:border-l-0 lg:first:pl-0"
-								>
-									<div className="flex items-center gap-4">
-										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-forest/20 text-forest">
-											<Icon
-												size={21}
-												strokeWidth={1.5}
-												aria-hidden="true"
-											/>
-										</span>
+								<div className="absolute inset-0 bg-gradient-to-t from-forest/40 via-transparent to-transparent" />
 
-										<span className="font-display text-xl text-gold">
-											{p.n}
-										</span>
-									</div>
+								<span className="absolute left-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-forest backdrop-blur-sm">
+									<Icon
+										size={20}
+										strokeWidth={1.5}
+										aria-hidden="true"
+									/>
+								</span>
 
-									<h3 className="mt-6 text-xl">
-										{p.title}
-									</h3>
+								<span className="absolute bottom-5 right-5 font-display text-3xl text-white/90">
+									{p.n}
+								</span>
+							</div>
+						</div>
 
-									<p className="mt-3 text-[0.95rem] leading-relaxed text-charcoal/70">
-										{p.text}
-									</p>
-								</div>
-							);
-						})}
+						{/* CONTENT */}
+						<div
+							className={`why-pillar-content ${
+								index % 2 === 0
+									? "lg:order-2"
+									: "lg:order-1"
+							}`}
+						>
+							<div className="flex items-center gap-4">
+								<span className="font-display text-xl text-gold">
+									{p.n}
+								</span>
+
+								<span className="h-px w-12 bg-forest/20" />
+							</div>
+
+							<h3 className="mt-5 text-2xl lg:text-3xl">
+								{p.title}
+							</h3>
+
+							<p className="mt-4 max-w-xl text-[0.98rem] leading-7 text-charcoal/70">
+								{p.text}
+							</p>
+						</div>
 					</div>
-				</div>
-			</section>
+				);
+			})}
+		</div>
+	</div>
+</section>
 
 			{/* =========================================
 			    FOUNDERS

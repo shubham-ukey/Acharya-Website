@@ -23,7 +23,7 @@ function AnimatedRoutes() {
 
   return (
     <>
-      <MouseFollower />
+      {/* <MouseFollower /> */}
 
       <PageTransition key={location.pathname}>
         <Routes location={location}>
