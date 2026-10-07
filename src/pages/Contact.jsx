@@ -1,9 +1,18 @@
 
 import { useState } from "react";
-import { CheckCircle2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import {
+	CheckCircle2,
+	Mail,
+	MapPin,
+	MessageCircle,
+	Phone,
+	Clock,
+	ShieldCheck,
+	Send,
+} from "lucide-react";
 import emailjs from "@emailjs/browser";
 import Seo from "../components/Seo";
-import PageHero from "../components/PageHero";
+import SplitWords from "../components/SplitWords";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
 import { brand, whatsappLink } from "../config/brand";
@@ -40,19 +49,26 @@ const validate = (v) => {
 	return e;
 };
 
+const emptyValues = {
+	name: "",
+	age: "",
+	gender: "",
+	mobile: "",
+	email: "",
+	concern: "",
+	website: "",
+};
+
+const nextSteps = [
+	{ Icon: Send, text: "We receive your inquiry" },
+	{ Icon: Clock, text: "We review it carefully" },
+	{ Icon: MessageCircle, text: "We contact you personally" },
+];
+
 export default function Contact() {
 	const ref = useGsapScope();
 
-	const [values, setValues] = useState({
-		name: "",
-		age: "",
-		gender: "",
-		mobile: "",
-		email: "",
-		concern: "",
-		website: "",
-	});
-
+	const [values, setValues] = useState(emptyValues);
 	const [errors, setErrors] = useState({});
 	const [status, setStatus] = useState("idle"); // idle | sending | sent | failed
 
@@ -107,6 +123,26 @@ export default function Contact() {
 		}
 	};
 
+	const details = [
+		{
+			Icon: Mail,
+			t: "Email",
+			v: brand.email,
+			h: `mailto:${brand.email}`,
+		},
+		{
+			Icon: Phone,
+			t: "Phone",
+			v: brand.phone,
+			h: `tel:${brand.phone.replace(/\s/g, "")}`,
+		},
+		{
+			Icon: MapPin,
+			t: "Location",
+			v: brand.location,
+		},
+	];
+
 	return (
 		<div ref={ref}>
 			<Seo
@@ -114,286 +150,405 @@ export default function Contact() {
 				description="Contact us for Ayurveda, Yoga and healthcare research consultation."
 			/>
 
-			<PageHero
-				eyebrow="Contact"
-				title="Let's Start a Conversation"
-				description="Share a few details about yourself and your concern. We will get back to you personally."
-			/>
+			{/* =========================================
+			    HERO / CONTACT BANNER
+			========================================= */}
+			<section
+				className="relative overflow-hidden bg-ivory"
+				aria-labelledby="contact-hero-heading"
+			>
+				{/* Background Banner */}
+				<div
+					className="absolute inset-0"
+					data-hero-art
+					aria-hidden="true"
+				>
+					<img
+						src="/banners/contact-us.webp"
+						alt=""
+						className="h-full w-full object-cover object-[75%_center] lg:object-right"
+						data-hero-art-inner
+						fetchPriority="high"
+					/>
 
+					{/* Mobile Overlay */}
+					<div className="absolute inset-0 bg-gradient-to-b from-ivory via-ivory/85 via-50% to-transparent lg:hidden" />
+
+					{/* Desktop Overlay */}
+					<div className="absolute inset-0 hidden bg-gradient-to-r from-ivory/90 via-ivory/55 via-45% to-transparent lg:block" />
+				</div>
+
+				<div className="container-x relative flex min-h-[34rem] items-center pb-20 pt-32 md:pt-40">
+					<div className="max-w-xl lg:max-w-[34rem]">
+						<p className="eyebrow" data-hero-label>
+							Contact
+						</p>
+
+						<h1
+							id="contact-hero-heading"
+							className="h-display mt-6 !text-[2.4rem] sm:!text-6xl lg:!text-[3.75rem]"
+						>
+							<SplitWords text="Let's Start a Conversation" />
+						</h1>
+
+						<p className="lede mt-7" data-hero-fade>
+							Share a few details about yourself and your concern.
+							We will get back to you personally.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			{/* =========================================
+			    CONTACT FORM + DETAILS
+			========================================= */}
 			<section
 				className="section-pad !pt-12 md:!pt-16"
 				aria-label="Contact form and details"
 			>
-				<div className="container-x grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
+				<div className="container-x">
 					<div
-						className="rounded-[2rem] border border-forest/10 bg-white p-6 shadow-soft sm:p-10"
+						className="grid overflow-hidden rounded-[2rem] border border-forest/10 bg-white shadow-soft lg:grid-cols-[0.8fr_1.2fr]"
 						data-reveal
 					>
-						{status === "sent" ? (
-							<div className="py-10 text-center" role="status">
-								<CheckCircle2
-									size={44}
-									className="mx-auto text-forest"
-									strokeWidth={1.4}
-									aria-hidden="true"
-								/>
+						{/* LEFT: DETAILS PANEL */}
+						<aside className="relative flex flex-col overflow-hidden bg-forest p-8 text-ivory sm:p-10">
+							<div
+								className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-gold/15 blur-3xl"
+								aria-hidden="true"
+							/>
 
-								<h2 className="mt-5 text-3xl">
-									Thank you, {values.name.split(" ")[0]}
-								</h2>
-
-								<p className="mx-auto mt-3 max-w-md text-charcoal/70">
-									Your concern has been received. We will contact you
-									shortly.
+							<div className="relative">
+								<p className="eyebrow !text-gold">
+									Get in Touch
 								</p>
 
+								<h2 className="mt-4 text-2xl !text-ivory sm:text-3xl">
+									We would love to hear from you
+								</h2>
+
+								<ul className="mt-8 space-y-6">
+									{details.map(({ Icon, t, v, h }) => (
+										<li key={t} className="flex gap-4">
+											<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ivory/10 text-gold">
+												<Icon
+													size={19}
+													aria-hidden="true"
+												/>
+											</span>
+
+											<div className="min-w-0">
+												<p className="text-xs font-semibold uppercase tracking-[0.18em] text-ivory/60">
+													{t}
+												</p>
+
+												{h ? (
+													<a
+														href={h}
+														className="break-all text-ivory/90 transition hover:text-gold"
+													>
+														{v}
+													</a>
+												) : (
+													<p className="text-ivory/90">
+														{v}
+													</p>
+												)}
+											</div>
+										</li>
+									))}
+								</ul>
+
+								{/* WHATSAPP */}
 								<Button
+									href={whatsappLink()}
+									target="_blank"
+									rel="noopener noreferrer"
 									variant="secondary"
-									className="mt-8"
-									onClick={() => {
-										setValues({
-											name: "",
-											age: "",
-											gender: "",
-											mobile: "",
-											email: "",
-											concern: "",
-											website: "",
-										});
-
-										setErrors({});
-										setStatus("idle");
-									}}
+									className="mt-8 w-full"
 								>
-									Send another inquiry
+									<MessageCircle
+										size={17}
+										aria-hidden="true"
+									/>
+									Chat on WhatsApp
 								</Button>
-							</div>
-						) : (
-							<form onSubmit={onSubmit} noValidate className="space-y-6">
-								<h2 className="text-2xl">Contact Us</h2>
 
-								{/* Honeypot field */}
-								<div
-									className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
-									aria-hidden="true"
-								>
-									<label htmlFor="website">Leave this field empty</label>
-
-									<input
-										id="website"
-										name="website"
-										type="text"
-										tabIndex={-1}
-										autoComplete="off"
-										value={values.website}
-										onChange={set("website")}
-									/>
-								</div>
-
-								<div className="grid gap-6 sm:grid-cols-2">
-									<FormField
-										id="name"
-										label="Full Name"
-										required
-										error={errors.name}
-									>
-										<input
-											id="name"
-											name="name"
-											autoComplete="name"
-											className="input"
-											placeholder="Enter your full name"
-											value={values.name}
-											onChange={set("name")}
-											{...aria("name")}
-										/>
-									</FormField>
-
-									<FormField
-										id="age"
-										label="Age"
-										required
-										error={errors.age}
-									>
-										<input
-											id="age"
-											name="age"
-											type="number"
-											min="1"
-											max="120"
-											className="input"
-											placeholder="Enter your age"
-											value={values.age}
-											onChange={set("age")}
-											{...aria("age")}
-										/>
-									</FormField>
-
-									<FormField
-										id="gender"
-										label="Gender"
-										required
-										error={errors.gender}
-									>
-										<select
-											id="gender"
-											name="gender"
-											className="input"
-											value={values.gender}
-											onChange={set("gender")}
-											{...aria("gender")}
-										>
-											<option value="">Select gender</option>
-											<option value="Male">Male</option>
-											<option value="Female">Female</option>
-											<option value="Other">Other</option>
-											<option value="Prefer not to say">
-												Prefer not to say
-											</option>
-										</select>
-									</FormField>
-
-									<FormField
-										id="mobile"
-										label="Mobile Number"
-										required
-										error={errors.mobile}
-									>
-										<input
-											id="mobile"
-											name="mobile"
-											type="tel"
-											autoComplete="tel"
-											className="input"
-											placeholder="Enter 10-digit mobile number"
-											value={values.mobile}
-											onChange={set("mobile")}
-											{...aria("mobile")}
-										/>
-									</FormField>
-
-									<FormField
-										id="email"
-										label="Email ID"
-										required
-										error={errors.email}
-									>
-										<input
-											id="email"
-											name="email"
-											type="email"
-											autoComplete="email"
-											className="input"
-											placeholder="Enter your email address"
-											value={values.email}
-											onChange={set("email")}
-											{...aria("email")}
-										/>
-									</FormField>
-								</div>
-
-								<FormField
-									id="concern"
-									label="Concern"
-									required
-									error={errors.concern}
-								>
-									<textarea
-										id="concern"
-										name="concern"
-										rows={6}
-										className="input resize-y"
-										placeholder="Briefly describe your concern..."
-										value={values.concern}
-										onChange={set("concern")}
-										{...aria("concern")}
-									/>
-								</FormField>
-
-								{status === "failed" && (
-									<p
-										role="alert"
-										className="text-sm font-medium text-red-800"
-									>
-										We could not send your inquiry. Please try again or email
-										us at {brand.email}.
+								{/* WHAT HAPPENS NEXT */}
+								<div className="mt-10 border-t border-ivory/15 pt-8">
+									<p className="text-xs font-semibold uppercase tracking-[0.18em] text-ivory/60">
+										What happens next
 									</p>
-								)}
 
-								<Button
-									type="submit"
-									disabled={status === "sending"}
-									className="w-full sm:w-auto"
+									<ol className="mt-4 space-y-3">
+										{nextSteps.map(
+											({ Icon, text }, i) => (
+												<li
+													key={text}
+													className="flex items-center gap-3 text-sm text-ivory/85"
+												>
+													<span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-ivory/25 text-xs text-gold">
+														{i + 1}
+													</span>
+
+													{text}
+												</li>
+											)
+										)}
+									</ol>
+								</div>
+							</div>
+						</aside>
+
+						{/* RIGHT: FORM */}
+						<div className="p-6 sm:p-10 lg:p-12">
+							{status === "sent" ? (
+								<div
+									className="flex h-full flex-col items-center justify-center py-10 text-center"
+									role="status"
 								>
-									{status === "sending" ? "Sending…" : "Submit"}
-								</Button>
-							</form>
-						)}
-					</div>
-
-					{/* CONTACT DETAILS */}
-					<aside className="space-y-8" data-reveal>
-						<ul className="space-y-6">
-							{[
-								{
-									Icon: Mail,
-									t: "Email",
-									v: brand.email,
-									h: `mailto:${brand.email}`,
-								},
-								{
-									Icon: Phone,
-									t: "Phone",
-									v: brand.phone,
-									h: `tel:${brand.phone.replace(/\s/g, "")}`,
-								},
-								{
-									Icon: MapPin,
-									t: "Location",
-									v: brand.location,
-								},
-							].map(({ Icon, t, v, h }) => (
-								<li key={t} className="flex gap-4">
-									<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage-soft text-forest">
-										<Icon size={19} aria-hidden="true" />
+									<span className="flex h-20 w-20 items-center justify-center rounded-full bg-sage-soft">
+										<CheckCircle2
+											size={44}
+											className="text-forest"
+											strokeWidth={1.4}
+											aria-hidden="true"
+										/>
 									</span>
 
+									<h2 className="mt-6 text-3xl">
+										Thank you,{" "}
+										{values.name.split(" ")[0]}
+									</h2>
+
+									<p className="mx-auto mt-3 max-w-md text-charcoal/70">
+										Your concern has been received. We will
+										contact you shortly.
+									</p>
+
+									<Button
+										variant="secondary"
+										className="mt-8"
+										onClick={() => {
+											setValues(emptyValues);
+											setErrors({});
+											setStatus("idle");
+										}}
+									>
+										Send another inquiry
+									</Button>
+								</div>
+							) : (
+								<form
+									onSubmit={onSubmit}
+									noValidate
+									className="relative space-y-6"
+								>
 									<div>
-										<p className="text-sm font-semibold text-forest">
-											{t}
+										<h2 className="text-2xl sm:text-3xl">
+											Contact Us
+										</h2>
+
+										<p className="mt-2 text-sm text-charcoal/60">
+											Fields marked with * are required.
 										</p>
-
-										{h ? (
-											<a
-												href={h}
-												className="break-all text-charcoal/75 hover:text-forest"
-											>
-												{v}
-											</a>
-										) : (
-											<p className="text-charcoal/75">{v}</p>
-										)}
 									</div>
-								</li>
-							))}
-						</ul>
 
-						{/* WHATSAPP */}
-						<Button
-							href={whatsappLink()}
-							target="_blank"
-							rel="noopener noreferrer"
-							variant="secondary"
-							className="w-full"
-						>
-							<MessageCircle size={17} aria-hidden="true" />
-							Chat on WhatsApp
-						</Button>
-					</aside>
+									{/* Honeypot field */}
+									<div
+										className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+										aria-hidden="true"
+									>
+										<label htmlFor="website">
+											Leave this field empty
+										</label>
+
+										<input
+											id="website"
+											name="website"
+											type="text"
+											tabIndex={-1}
+											autoComplete="off"
+											value={values.website}
+											onChange={set("website")}
+										/>
+									</div>
+
+									<div className="grid gap-6 sm:grid-cols-2">
+										<div className="sm:col-span-2">
+											<FormField
+												id="name"
+												label="Full Name"
+												required
+												error={errors.name}
+											>
+												<input
+													id="name"
+													name="name"
+													autoComplete="name"
+													className="input"
+													placeholder="Enter your full name"
+													value={values.name}
+													onChange={set("name")}
+													{...aria("name")}
+												/>
+											</FormField>
+										</div>
+
+										<FormField
+											id="age"
+											label="Age"
+											required
+											error={errors.age}
+										>
+											<input
+												id="age"
+												name="age"
+												type="number"
+												min="1"
+												max="120"
+												className="input"
+												placeholder="Enter your age"
+												value={values.age}
+												onChange={set("age")}
+												{...aria("age")}
+											/>
+										</FormField>
+
+										<FormField
+											id="gender"
+											label="Gender"
+											required
+											error={errors.gender}
+										>
+											<select
+												id="gender"
+												name="gender"
+												className="input"
+												value={values.gender}
+												onChange={set("gender")}
+												{...aria("gender")}
+											>
+												<option value="">
+													Select gender
+												</option>
+												<option value="Male">
+													Male
+												</option>
+												<option value="Female">
+													Female
+												</option>
+												<option value="Other">
+													Other
+												</option>
+												<option value="Prefer not to say">
+													Prefer not to say
+												</option>
+											</select>
+										</FormField>
+
+										<FormField
+											id="mobile"
+											label="Mobile Number"
+											required
+											error={errors.mobile}
+										>
+											<input
+												id="mobile"
+												name="mobile"
+												type="tel"
+												autoComplete="tel"
+												className="input"
+												placeholder="Enter 10-digit mobile number"
+												value={values.mobile}
+												onChange={set("mobile")}
+												{...aria("mobile")}
+											/>
+										</FormField>
+
+										<FormField
+											id="email"
+											label="Email ID"
+											required
+											error={errors.email}
+										>
+											<input
+												id="email"
+												name="email"
+												type="email"
+												autoComplete="email"
+												className="input"
+												placeholder="Enter your email address"
+												value={values.email}
+												onChange={set("email")}
+												{...aria("email")}
+											/>
+										</FormField>
+									</div>
+
+									<FormField
+										id="concern"
+										label="Concern"
+										required
+										error={errors.concern}
+									>
+										<textarea
+											id="concern"
+											name="concern"
+											rows={6}
+											className="input resize-y"
+											placeholder="Briefly describe your concern..."
+											value={values.concern}
+											onChange={set("concern")}
+											{...aria("concern")}
+										/>
+									</FormField>
+
+									{status === "failed" && (
+										<p
+											role="alert"
+											className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
+										>
+											We could not send your inquiry.
+											Please try again or email us at{" "}
+											{brand.email}.
+										</p>
+									)}
+
+									<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+										<Button
+											type="submit"
+											disabled={status === "sending"}
+											className="w-full sm:w-auto"
+										>
+											{status === "sending"
+												? "Sending…"
+												: "Submit"}
+										</Button>
+
+										<p className="flex items-center gap-2 text-xs text-charcoal/55">
+											<ShieldCheck
+												size={15}
+												className="shrink-0 text-forest"
+												aria-hidden="true"
+											/>
+											Your details are kept private.
+										</p>
+									</div>
+								</form>
+							)}
+						</div>
+					</div>
 				</div>
 
-				{/* MAP */}
+				{/* =========================================
+				    MAP
+				========================================= */}
 				<div className="container-x mt-16">
+					<div className="mb-6 text-center" data-reveal>
+						<p className="eyebrow">Find Us</p>
+					</div>
+
 					<div
 						className="overflow-hidden rounded-[2rem] border border-forest/10 shadow-soft"
 						data-reveal

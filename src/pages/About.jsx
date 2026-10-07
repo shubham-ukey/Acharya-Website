@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 import Seo from "../components/Seo";
-import PageHero from "../components/PageHero";
+import SplitWords from "../components/SplitWords";
 import SectionHeading from "../components/SectionHeading";
 import { FounderPortrait } from "../components/FounderCard";
 import Roadmap from "../components/Roadmap";
@@ -69,6 +69,24 @@ const steps = [
 	},
 ];
 
+function ObjectiveCard({ objective }) {
+	const Icon = objective.Icon;
+
+	return (
+		<article className="rounded-3xl border border-forest/10 bg-white p-7">
+			<div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-soft text-forest">
+				<Icon size={22} strokeWidth={1.6} aria-hidden="true" />
+			</div>
+
+			<h3 className="mt-6 text-xl leading-snug">{objective.title}</h3>
+
+			<p className="mt-3 text-[0.95rem] leading-7 text-charcoal/70">
+				{objective.text}
+			</p>
+		</article>
+	);
+}
+
 export default function About() {
 	const ref = useGsapScope();
 
@@ -79,27 +97,66 @@ export default function About() {
 				description="Learn about our mission to advance Ayurveda through research, and meet the founders behind the consultancy."
 			/>
 
-			{/* HERO */}
-			<PageHero
-				eyebrow="About Us"
-				title="Advancing Ayurveda Through Research"
-				description="We are a group of clinicians and researchers who believe Ayurveda and Yoga deserve the same careful documentation and testing as any other health discipline."
-				art="sprig"
-			/>
-
-			{/* OUR STORY */}
+			{/* =========================================
+			    HERO
+			========================================= */}
 			<section
-				className="section-pad"
-				aria-labelledby="story-heading"
+				className="relative overflow-hidden bg-ivory"
+				aria-labelledby="about-hero-heading"
 			>
+				{/* Background banner: mobile + desktop */}
+				<div
+					className="absolute inset-0"
+					data-hero-art
+					aria-hidden="true"
+				>
+					<img
+						src="/banners/about-us.webp"
+						alt=""
+						className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
+						data-hero-art-inner
+						fetchPriority="high"
+					/>
+
+					{/* Mobile: upar se ivory fade, neeche plant dikhe */}
+					<div className="absolute inset-0 bg-gradient-to-b from-ivory via-ivory/85 via-45% to-transparent lg:hidden" />
+
+					{/* Desktop: left se halka fade */}
+					<div className="absolute inset-0 hidden bg-gradient-to-r from-ivory/70 via-transparent to-transparent lg:block" />
+				</div>
+
+				<div className="container-x relative flex pb-72 pt-32 sm:pb-[24rem] md:pt-40 lg:min-h-[36rem] lg:items-center lg:pb-24">
+					<div className="max-w-xl lg:max-w-[34rem]">
+						<p className="eyebrow" data-hero-label>
+							About Us
+						</p>
+
+						<h1
+							id="about-hero-heading"
+							className="h-display mt-6 !text-[2.4rem] sm:!text-6xl lg:!text-[3.75rem]"
+						>
+							<SplitWords text="Advancing Ayurveda Through Research" />
+						</h1>
+
+						<p className="lede mt-7" data-hero-fade>
+							We are a group of clinicians and researchers who
+							believe Ayurveda and Yoga deserve the same careful
+							documentation and testing as any other health
+							discipline.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			{/* =========================================
+			    OUR STORY
+			========================================= */}
+			<section className="section-pad" aria-labelledby="story-heading">
 				<div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
 					<div data-reveal>
 						<p className="eyebrow">Our Story</p>
 
-						<h2
-							id="story-heading"
-							className="h-section mt-5"
-						>
+						<h2 id="story-heading" className="h-section mt-5">
 							When we started
 						</h2>
 					</div>
@@ -109,10 +166,9 @@ export default function About() {
 						data-reveal
 					>
 						<p>
-							By the end of 2025, a new Ayurveda
-							Multispeciality Hospital will be launched by four
-							friends and professionals — Ankita, Prajakta,
-							Reena, and Sakshi.
+							By the end of 2025, a new Ayurveda Multispeciality
+							Hospital will be launched by four friends and
+							professionals — Ankita, Prajakta, Reena, and Sakshi.
 						</p>
 
 						<p>
@@ -132,11 +188,10 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* MISSION & VISION */}
-			<section
-				className="pb-20 md:pb-28"
-				aria-label="Mission and vision"
-			>
+			{/* =========================================
+			    MISSION & VISION
+			========================================= */}
+			<section className="pb-20 md:pb-28" aria-label="Mission and vision">
 				<div
 					className="container-x grid gap-6 md:grid-cols-2"
 					data-stagger
@@ -164,11 +219,7 @@ export default function About() {
 							<Icon
 								size={28}
 								strokeWidth={1.5}
-								className={
-									i === 0
-										? "text-gold"
-										: "text-forest"
-								}
+								className={i === 0 ? "text-gold" : "text-forest"}
 								aria-hidden="true"
 							/>
 
@@ -194,105 +245,61 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* CORE OBJECTIVES */}
-<section
-	className="section-pad bg-ivory-deep/60"
-	aria-labelledby="objectives-heading"
->
-	<div className="container-x">
-		<div data-reveal>
-			<p className="eyebrow">Core Objectives</p>
-
-			<h2
-				id="objectives-heading"
-				className="h-section mt-5"
-			>
-				What We Are Here to Do
-			</h2>
-
-			<p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/70">
-				Our objectives focus on delivering quality healthcare,
-				advancing Ayurveda through research, standardizing
-				medications and services, creating awareness, and
-				building an integrated healthcare ecosystem.
-			</p>
-		</div>
-
-		<div className="mt-14">
-			{/* FIRST ROW - 3 CARDS */}
-			<div
-				className="grid gap-6 md:grid-cols-3"
-				data-stagger
-			>
-				{objectives.slice(0, 3).map((objective) => {
-					const Icon = objective.Icon;
-
-					return (
-						<article
-							key={objective.title}
-							className="rounded-3xl border border-forest/10 bg-white p-7"
-						>
-							<div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-soft text-forest">
-								<Icon
-									size={22}
-									strokeWidth={1.6}
-									aria-hidden="true"
-								/>
-							</div>
-
-							<h3 className="mt-6 text-xl leading-snug">
-								{objective.title}
-							</h3>
-
-							<p className="mt-3 text-[0.95rem] leading-7 text-charcoal/70">
-								{objective.text}
-							</p>
-						</article>
-					);
-				})}
-			</div>
-
-			{/* SECOND ROW - 2 CARDS CENTERED */}
-			<div
-				className="mt-6 grid gap-6 md:grid-cols-2 md:max-w-4xl md:mx-auto"
-				data-stagger
-			>
-				{objectives.slice(3, 5).map((objective) => {
-					const Icon = objective.Icon;
-
-					return (
-						<article
-							key={objective.title}
-							className="rounded-3xl border border-forest/10 bg-white p-7"
-						>
-							<div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-soft text-forest">
-								<Icon
-									size={22}
-									strokeWidth={1.6}
-									aria-hidden="true"
-								/>
-							</div>
-
-							<h3 className="mt-6 text-xl leading-snug">
-								{objective.title}
-							</h3>
-
-							<p className="mt-3 text-[0.95rem] leading-7 text-charcoal/70">
-								{objective.text}
-							</p>
-						</article>
-					);
-				})}
-			</div>
-		</div>
-	</div>
-</section>
-
-			{/* FOUNDERS */}
+			{/* =========================================
+			    CORE OBJECTIVES
+			========================================= */}
 			<section
-				id="founders"
-				className="section-pad scroll-mt-20"
+				className="section-pad bg-ivory-deep/60"
+				aria-labelledby="objectives-heading"
 			>
+				<div className="container-x">
+					<div data-reveal>
+						<p className="eyebrow">Core Objectives</p>
+
+						<h2 id="objectives-heading" className="h-section mt-5">
+							What We Are Here to Do
+						</h2>
+
+						<p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/70">
+							Our objectives focus on delivering quality
+							healthcare, advancing Ayurveda through research,
+							standardizing medications and services, creating
+							awareness, and building an integrated healthcare
+							ecosystem.
+						</p>
+					</div>
+
+					<div className="mt-14">
+						{/* FIRST ROW - 3 CARDS */}
+						<div className="grid gap-6 md:grid-cols-3" data-stagger>
+							{objectives.slice(0, 3).map((objective) => (
+								<ObjectiveCard
+									key={objective.title}
+									objective={objective}
+								/>
+							))}
+						</div>
+
+						{/* SECOND ROW - 2 CARDS CENTERED */}
+						<div
+							className="mt-6 grid gap-6 md:mx-auto md:max-w-4xl md:grid-cols-2"
+							data-stagger
+						>
+							{objectives.slice(3, 5).map((objective) => (
+								<ObjectiveCard
+									key={objective.title}
+									objective={objective}
+								/>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* =========================================
+			    FOUNDERS
+			========================================= */}
+			<section id="founders" className="section-pad scroll-mt-20">
 				<div className="container-x">
 					<SectionHeading
 						eyebrow="Founders"
@@ -313,11 +320,7 @@ export default function About() {
 									}`}
 								/>
 
-								<div
-									className={
-										i % 2 ? "lg:order-1" : ""
-									}
-								>
+								<div className={i % 2 ? "lg:order-1" : ""}>
 									<h3 className="text-3xl sm:text-4xl">
 										{f.name}
 									</h3>
@@ -330,7 +333,7 @@ export default function About() {
 										{f.bio}
 									</p>
 
-									<h4 className="mt-8 text-sm font-sans font-semibold uppercase tracking-[0.16em] text-forest/70">
+									<h4 className="mt-8 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-forest/70">
 										Professional background
 									</h4>
 
@@ -372,7 +375,9 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* OUR APPROACH */}
+			{/* =========================================
+			    OUR APPROACH
+			========================================= */}
 			<section className="section-pad bg-ivory-deep/60">
 				<div className="container-x">
 					<SectionHeading
@@ -393,9 +398,7 @@ export default function About() {
 									{String(i + 1).padStart(2, "0")}
 								</span>
 
-								<h3 className="mt-4 text-xl">
-									{s.title}
-								</h3>
+								<h3 className="mt-4 text-xl">{s.title}</h3>
 
 								<p className="mt-2 text-sm leading-relaxed text-charcoal/70">
 									{s.text}
@@ -406,7 +409,9 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* FUTURE ROADMAP */}
+			{/* =========================================
+			    FUTURE ROADMAP
+			========================================= */}
 			<section className="section-pad">
 				<div className="container-x">
 					<SectionHeading
@@ -420,7 +425,9 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* CTA */}
+			{/* =========================================
+			    CTA
+			========================================= */}
 			<CTASection
 				title="Let's Build Meaningful Healthcare Research Together"
 				description="Tell us about your idea, thesis or project and we will suggest a practical way forward."

@@ -63,99 +63,79 @@ export default function Home() {
 		<div ref={ref}>
 			<Seo />
 
-			{/* =========================================
-			    HERO
-			========================================= */}
-			<section
-				className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-40"
-				aria-labelledby="hero-heading"
+	{/* =========================================
+    HERO
+========================================= */}
+<section
+	className="relative overflow-hidden bg-ivory"
+	aria-labelledby="hero-heading"
+>
+	{/* Background banner: mobile + desktop dono par */}
+	<div className="absolute inset-0" data-hero-art aria-hidden="true">
+		<img
+			src="/images/hero-banner.png"
+			alt=""
+			className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
+			data-hero-art-inner
+			fetchPriority="high"
+		/>
+
+		{/* Mobile: upar se ivory fade (text readable), neeche plant dikhe */}
+		<div className="absolute inset-0 bg-gradient-to-b from-ivory via-ivory/85 via-45% to-transparent lg:hidden" />
+
+		{/* Desktop: left se halka fade */}
+		<div className="absolute inset-0 hidden bg-gradient-to-r from-ivory/70 via-transparent to-transparent lg:block" />
+	</div>
+
+	<div className="container-x relative flex pb-80 pt-32 sm:pb-[26rem] md:pt-40 lg:min-h-[44rem] lg:items-center lg:pb-24">
+		<div className="max-w-xl lg:max-w-[34rem]">
+			<p className="eyebrow" data-hero-label>
+				Ayurveda • Yoga • Health Research
+			</p>
+
+			<h1
+				id="hero-heading"
+				className="h-display mt-6 !text-[2.6rem] sm:!text-6xl lg:!text-[4rem]"
 			>
-				<div
-					className="pointer-events-none absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full bg-sage-soft blur-3xl"
-					aria-hidden="true"
-				/>
+				<SplitWords text="Bridging Ancient Wisdom with Modern Science" />
+			</h1>
 
-				<div className="container-x relative grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-					<div>
-						<p className="eyebrow" data-hero-label>
-							Ayurveda • Yoga • Health Research
-						</p>
+			<p className="lede mt-7" data-hero-fade>
+				Research-driven consultancy in Ayurveda, Yoga and
+				healthcare, helping transform knowledge, clinical
+				experience and ideas into meaningful scientific outcomes.
+			</p>
 
-						<h1
-							id="hero-heading"
-							className="h-display mt-6 !text-[2.6rem] sm:!text-6xl lg:!text-[4.25rem]"
-						>
-							<SplitWords text="Bridging Ancient Wisdom with Modern Science" />
-						</h1>
+			<div
+				className="mt-9 flex flex-col gap-3 sm:flex-row"
+				data-hero-fade
+			>
+				<Button to="/services" arrow>
+					Explore Our Services
+				</Button>
 
-						<p className="lede mt-7 max-w-xl" data-hero-fade>
-							Research-driven consultancy in Ayurveda, Yoga and
-							healthcare, helping transform knowledge, clinical
-							experience and ideas into meaningful scientific outcomes.
-						</p>
+				<Button to="/contact" variant="secondary">
+					Talk to Us
+				</Button>
+			</div>
 
-						<div
-							className="mt-9 flex flex-col gap-3 sm:flex-row"
-							data-hero-fade
-						>
-							<Button to="/services" arrow>
-								Explore Our Services
-							</Button>
-
-							<Button to="/contact" variant="secondary">
-								Talk to Us
-							</Button>
-						</div>
-
-						<ul
-							className="mt-12 grid max-w-xl grid-cols-2 gap-x-6 gap-y-3 border-t border-forest/15 pt-6 text-sm text-charcoal/70"
-							data-hero-fade
-						>
-							{capabilities.map((c) => (
-								<li key={c} className="flex items-center gap-2">
-									<span
-										className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-										aria-hidden="true"
-									/>
-									{c}
-								</li>
-							))}
-						</ul>
-					</div>
-
-					<div
-						className="relative mx-auto w-full max-w-md lg:max-w-none"
-						data-hero-art
-					>
-						<div className="aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] shadow-lift">
-							<div className="h-full w-full" data-hero-art-inner>
-								<ArtPlate
-									variant="sprig"
-									tone="light"
-									label="Botanical specimen plate of a medicinal herb with measurement marks"
-								/>
-							</div>
-						</div>
-
-						<div className="absolute -bottom-6 left-1/2 w-[92%] -translate-x-1/2 rounded-2xl border border-forest/10 bg-ivory/95 p-4 shadow-soft backdrop-blur sm:-left-8 sm:bottom-10 sm:w-64 sm:translate-x-0">
-							<p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-forest/60">
-								Our method
-							</p>
-
-							<ol className="mt-3 flex items-center justify-between text-xs font-semibold text-forest">
-								{["Observe", "Study", "Publish"].map((s, i) => (
-									<li key={s} className="flex items-center gap-2">
-										<span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-forest text-[0.65rem] text-ivory">
-											{i + 1}
-										</span>
-										{s}
-									</li>
-								))}
-							</ol>
-						</div>
-					</div>
-				</div>
-			</section>
+			<ul
+				className="mt-12 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-forest/15 pt-6 text-sm text-charcoal/70"
+				data-hero-fade
+			>
+				{capabilities.map((c) => (
+					<li key={c} className="flex items-center gap-2">
+						<span
+							className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+							aria-hidden="true"
+						/>
+						{c}
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>
 
 			{/* =========================================
 			    MISSION
@@ -460,4 +440,3 @@ export default function Home() {
 		</div>
 	);
 }
-
