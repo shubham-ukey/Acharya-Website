@@ -28,7 +28,7 @@ export function heroIntro(scope) {
 		tl.from(label, {
 			opacity: 0,
 			y: 12,
-			duration: 0.6,
+			duration: 0.9,
 		});
 	}
 
@@ -38,7 +38,7 @@ export function heroIntro(scope) {
 			{
 				yPercent: 110,
 				duration: 0.95,
-				stagger: 0.06,
+				stagger: 0.09,
 			},
 			label.length ? "-=0.3" : 0,
 		);
@@ -50,7 +50,7 @@ export function heroIntro(scope) {
 			{
 				opacity: 0,
 				y: 18,
-				duration: 0.8,
+				duration: 0.9,
 				stagger: 0.1,
 			},
 			"-=0.5",
@@ -241,7 +241,7 @@ export function whyWorkWithUsAnimation(scope) {
 				{
 					x: 0,
 					opacity: 1,
-					duration: 1,
+					duration: 2,
 					ease: "power3.out",
 					scrollTrigger: {
 						trigger: pillar,
@@ -263,7 +263,7 @@ export function whyWorkWithUsAnimation(scope) {
 				{
 					x: 0,
 					opacity: 1,
-					duration: 0.85,
+					duration: 0.95,
 					delay: 0.15,
 					ease: "power3.out",
 					scrollTrigger: {
@@ -326,11 +326,11 @@ export function doctorsAnimation(scope) {
 					x: 0,
 					opacity: 1,
 					duration: 2,
-					delay: index * 0.11,
+					delay: index * 0.15,
 					ease: "power3.out",
 					scrollTrigger: {
 						trigger: card,
-						start: "top 90%",
+						start: "top 80%",
 						once: true,
 					},
 				},
