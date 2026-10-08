@@ -1,3 +1,4 @@
+
 import Seo from "../components/Seo";
 import Button, { TextLink } from "../components/Button";
 import SplitWords from "../components/SplitWords";
@@ -14,6 +15,7 @@ import { fetchArticles } from "../services/articlesApi";
 import { services } from "../data/services";
 import { founders } from "../data/founders";
 import { pillars } from "../data/pillars";
+import { brand } from "../config/brand";
 
 const capabilities = [
 	"Clinical research",
@@ -56,7 +58,17 @@ export default function Home() {
 
 				<div className="container-x relative flex pb-80 pt-32 sm:pb-[26rem] md:pt-40 lg:min-h-[44rem] lg:items-center lg:pb-24">
 					<div className="max-w-xl lg:max-w-[34rem]">
-						<p className="eyebrow" data-hero-label>
+
+						{/* COMPANY NAME */}
+<p
+	className="max-w-lg text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-forest/80 sm:text-base"
+	data-hero-label
+>
+	{brand.companyName}
+</p>
+
+						{/* BRAND TAGLINE */}
+						<p className="eyebrow mt-3" data-hero-label>
 							Ayurveda • Yoga • Health Research
 						</p>
 
@@ -187,7 +199,10 @@ export default function Home() {
 								<li>• Research-led thinking</li>
 								<li>• Classical Ayurvedic knowledge</li>
 								<li>• Structured academic guidance</li>
-								<li>• Dedicated focus on Women’s Health &amp; Cancer Care</li>
+								<li>
+									• Dedicated focus on Women’s Health &amp;
+									Cancer Care
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -260,7 +275,6 @@ export default function Home() {
 									key={p.n}
 									className="why-pillar grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
 								>
-									{/* IMAGE */}
 									<div
 										className={`why-pillar-image overflow-hidden rounded-[2rem] ${
 											index % 2 === 0
@@ -292,7 +306,6 @@ export default function Home() {
 										</div>
 									</div>
 
-									{/* CONTENT */}
 									<div
 										className={`why-pillar-content ${
 											index % 2 === 0
