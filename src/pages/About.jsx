@@ -22,7 +22,7 @@ const objectives = [
 	{
 		Icon: HeartPulse,
 		title: "Quality Healthcare Services",
-		text: "Access to quality healthcare services is a vital component in promoting health and wellness. We aim to provide timely, effective, personalized and holistic medical care that improves health outcomes, enhances quality of life, and empowers individuals to live healthy and fulfilling lives.",
+		text: "Access to quality healthcare services is a vital component in promoting health and wellness. We aim to provide timely, effective, personalized and holistic medical care that improves health outcomes, enhances quality of life, and empowers individuals to live healthy and fulfilling lives. Our clinical initiatives place dedicated focus on Women’s Health and Cancer Supportive Care.",
 	},
 	{
 		Icon: Microscope,
@@ -94,7 +94,7 @@ export default function About() {
 		<div ref={ref}>
 			<Seo
 				title="About Us"
-				description="Learn about our mission to advance Ayurveda through research, and meet the founders behind the consultancy."
+				description="Learn about our mission to advance Ayurveda and integrative traditions through research, and meet the founders behind the consultancy."
 			/>
 
 			{/* =========================================
@@ -133,16 +133,17 @@ export default function About() {
 
 						<h1
 							id="about-hero-heading"
-							className="h-display mt-6 !text-[2.4rem] sm:!text-6xl lg:!text-[3.75rem]"
+							className="h-display mt-6 !text-[2.2rem] sm:!text-5xl lg:!text-[3.25rem]"
 						>
-							<SplitWords text="Advancing Ayurveda Through Research" />
+							<SplitWords text="Advancing Ayurveda & Integrative Traditions Through Research" />
 						</h1>
 
 						<p className="lede mt-7" data-hero-fade>
-							We are a group of clinicians and researchers who
-							believe Ayurveda and Yoga deserve the same careful
-							documentation and testing as any other health
-							discipline.
+							We are a collective of clinicians and researchers
+							dedicated to bringing rigorous documentation and
+							scientific inquiry to Ayurveda, Yoga, global
+							traditional systems, and modern integrative
+							healthcare.
 						</p>
 					</div>
 				</div>
@@ -166,23 +167,35 @@ export default function About() {
 						data-reveal
 					>
 						<p>
-							By the end of 2025, a new Ayurveda Multispeciality
-							Hospital will be launched by four friends and
-							professionals — Ankita, Prajakta, Reena, and Sakshi.
+							What began as a long-standing friendship among three
+							clinicians—Ankita, Prajakta and Reena—naturally
+							evolved into a shared professional calling.
 						</p>
 
 						<p>
-							United by their strong bond and shared values, they
-							came together with a common vision to build a
-							healthcare institution rooted in ethical practices,
-							compassionate care, and professional excellence.
+							In 2023, drawing from our daily clinical experiences
+							and countless conversations, we realized we were all
+							observing the very same opportunity: patients and
+							healthcare needed an environment where authentic
+							classical Ayurveda, evidence-based research, and
+							multi-speciality clinical rigor worked seamlessly
+							together, without compromising on time, empathy, or
+							depth. We discovered that our individual dreams,
+							clinical values, and visions aligned completely.
 						</p>
 
 						<p>
-							Their aim is to create an institution that not only
-							provides exceptional medical care but also places
-							community service, empathy, and dedication at the
-							heart of healthcare.
+							United by this strong bond and shared values, we came
+							together with a common vision to build an
+							institution rooted in ethical practices,
+							compassionate care, and scientific documentation.
+						</p>
+
+						<p>
+							Our aim is to create an institution that not only
+							provides exceptional medical care, but also places
+							research-backed practice, community service, empathy,
+							and dedication at the heart of healthcare.
 						</p>
 					</div>
 				</div>
