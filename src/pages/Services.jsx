@@ -2,7 +2,6 @@ import { Check } from "lucide-react";
 import Seo from "../components/Seo";
 import SplitWords from "../components/SplitWords";
 import Button from "../components/Button";
-import ArtPlate from "../components/ArtPlate";
 import CTASection from "../components/CTASection";
 import { getIcon } from "../components/icons";
 import { useGsapScope } from "../animations/gsapAnimations";
@@ -15,7 +14,7 @@ export default function Services() {
 		<div ref={ref}>
 			<Seo
 				title="Services"
-				description="Thesis-to-paper conversion, collaborative health projects, research workshops and Ayurveda procedure and product guidance."
+				description="Thesis-to-paper conversion, clinical writing and publication support, collaborative health projects, funded grants, research workshops, webinars and awareness."
 			/>
 
 			{/* =========================================
@@ -36,7 +35,7 @@ export default function Services() {
 						alt=""
 						className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
 						data-hero-art-inner
-						fetchPriority="high"
+						loading="eager"
 					/>
 
 					{/* Mobile: upar se ivory fade, neeche plant dikhe */}
@@ -85,7 +84,10 @@ export default function Services() {
 						aria-labelledby={`${s.id}-title`}
 					>
 						<div className="container-x grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
-							<div className={flip ? "lg:order-2" : ""} data-reveal>
+							<div
+								className={flip ? "lg:order-2" : ""}
+								data-reveal
+							>
 								<div className="flex items-center gap-5">
 									<span className="font-display text-7xl leading-none text-gold/70 sm:text-8xl">
 										{s.number}
@@ -109,16 +111,30 @@ export default function Services() {
 
 								<p className="lede mt-5">{s.description}</p>
 
-								<div
-									className="mt-8 aspect-[16/10] overflow-hidden rounded-3xl"
-									data-image-reveal
-								>
-									<ArtPlate
-										variant={s.art}
-										tone={i % 2 ? "paper" : "light"}
-										label={`Illustration for ${s.title}`}
-									/>
-								</div>
+								{/* SERVICE IMAGE */}
+								{s.image && (
+									<div
+										className="mt-8 aspect-[16/10] overflow-hidden rounded-3xl bg-sage-soft"
+										data-image-reveal
+									>
+										<img
+											src={s.image}
+											alt={s.title}
+											width="1600"
+											height="1000"
+											className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+											loading="lazy"
+											decoding="async"
+											onError={(e) => {
+												console.warn(
+													`Service image not found: ${s.image}`,
+												);
+												e.currentTarget.parentElement.style.display =
+													"none";
+											}}
+										/>
+									</div>
+								)}
 							</div>
 
 							<div className={flip ? "lg:order-1" : ""}>
@@ -134,9 +150,15 @@ export default function Services() {
 									data-stagger
 								>
 									{s.offerings.map((o) => (
-										<li key={o.title} className="flex gap-4 py-5">
+										<li
+											key={o.title}
+											className="flex gap-4 py-5"
+										>
 											<span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sage-soft text-forest">
-												<Check size={14} aria-hidden="true" />
+												<Check
+													size={14}
+													aria-hidden="true"
+												/>
 											</span>
 
 											<div>
@@ -172,7 +194,10 @@ export default function Services() {
 				<CTASection
 					title="Not sure which service fits?"
 					description="Describe your project in a few lines. We will tell you honestly whether and how we can help."
-					primary={{ label: "Start a Conversation", to: "/contact" }}
+					primary={{
+						label: "Start a Conversation",
+						to: "/contact",
+					}}
 					secondary={{
 						label: "Book a Consultation",
 						to: "/consultation",
