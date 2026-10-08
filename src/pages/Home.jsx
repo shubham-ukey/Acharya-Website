@@ -59,14 +59,13 @@ export default function Home() {
 				<div className="container-x relative flex pb-80 pt-32 sm:pb-[26rem] md:pt-40 lg:min-h-[44rem] lg:items-center lg:pb-24">
 					<div className="max-w-xl lg:max-w-[34rem]">
 
-						{/* COMPANY NAME */}
+	{/* COMPANY NAME */}
 <p
-	className="max-w-lg text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-forest/80 sm:text-base"
+	className="max-w-lg text-lg font-extrabold uppercase leading-relaxed tracking-[0.08em] text-gold sm:text-base"
 	data-hero-label
 >
 	{brand.companyName}
 </p>
-
 						{/* BRAND TAGLINE */}
 						<p className="eyebrow mt-3" data-hero-label>
 							Ayurveda • Yoga • Health Research
