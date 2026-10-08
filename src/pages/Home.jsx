@@ -1,4 +1,3 @@
-
 import Seo from "../components/Seo";
 import Button, { TextLink } from "../components/Button";
 import SplitWords from "../components/SplitWords";
@@ -58,16 +57,15 @@ export default function Home() {
 
 				<div className="container-x relative flex pb-80 pt-32 sm:pb-[26rem] md:pt-40 lg:min-h-[44rem] lg:items-center lg:pb-24">
 					<div className="max-w-xl lg:max-w-[34rem]">
-
-	{/* COMPANY NAME */}
-<p
-	className="max-w-lg text-lg font-extrabold uppercase leading-relaxed tracking-[0.08em] text-gold sm:text-base"
-	data-hero-label
->
-	{brand.companyName}
-</p>
+						{/* COMPANY NAME */}
+						<p
+							className="max-w-lg text-lg font-extrabold uppercase leading-relaxed tracking-[0.08em] text-gold sm:text-base"
+							data-hero-label
+						>
+							{brand.companyName}
+						</p>
 						{/* BRAND TAGLINE */}
-						<p className="eyebrow mt-3" data-hero-label>
+						<p className="eyebrow mt-3 font-bold" data-hero-label>
 							Ayurveda • Yoga • Health Research
 						</p>
 
@@ -79,10 +77,9 @@ export default function Home() {
 						</h1>
 
 						<p className="lede mt-7" data-hero-fade>
-							Research-driven consultancy in Ayurveda, Yoga and
-							Healthcare. Helping transform knowledge, clinical
-							experience and ideas into meaningful scientific
-							outcomes.
+							Research-driven consultancy in Ayurveda, Yoga and Healthcare.
+							Helping transform knowledge, clinical experience and ideas into
+							meaningful scientific outcomes.
 						</p>
 
 						<div
@@ -129,19 +126,18 @@ export default function Home() {
 						</h2>
 
 						<p className="lede mt-6">
-							We work at the intersection of Ayurveda, healthcare,
-							clinical experience and scientific research. Our role
-							is to help practitioners, scholars and organisations
-							ask sharper questions, design credible studies and
-							share their findings in ways the wider scientific
-							community can trust.
+							We work at the intersection of Ayurveda, healthcare, clinical
+							experience and scientific research. Our role is to help
+							practitioners, scholars and organisations ask sharper questions,
+							design credible studies and share their findings in ways the wider
+							scientific community can trust.
 						</p>
 
 						<p className="lede mt-4">
-							Ayurveda, Yoga, Global traditional systems, and
-							Modern integrative healthcare has depth that deserves
-							rigorous documentation. We provide the structure,
-							method and writing support to make that possible.
+							Ayurveda, Yoga, Global traditional systems, and Modern integrative
+							healthcare has depth that deserves rigorous documentation. We
+							provide the structure, method and writing support to make that
+							possible.
 						</p>
 
 						<TextLink to="/about" className="mt-8">
@@ -177,14 +173,12 @@ export default function Home() {
 					<div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
 						<div>
 							<p className="max-w-3xl text-lg leading-8 text-charcoal/75">
-								At Acharya, we bring together the depth of
-								Ayurvedic knowledge with a structured and
-								research-oriented approach. Our work is designed
-								to support researchers, students, practitioners,
-								and organisations looking to explore ideas,
-								develop meaningful research, translate knowledge
-								into practical outcomes and advance dedicated
-								solutions in Women’s Health and Cancer
+								At Acharya, we bring together the depth of Ayurvedic knowledge
+								with a structured and research-oriented approach. Our work is
+								designed to support researchers, students, practitioners, and
+								organisations looking to explore ideas, develop meaningful
+								research, translate knowledge into practical outcomes and
+								advance dedicated solutions in Women’s Health and Cancer
 								Supportive Care.
 							</p>
 						</div>
@@ -198,10 +192,7 @@ export default function Home() {
 								<li>• Research-led thinking</li>
 								<li>• Classical Ayurvedic knowledge</li>
 								<li>• Structured academic guidance</li>
-								<li>
-									• Dedicated focus on Women’s Health &amp;
-									Cancer Care
-								</li>
+								<li>• Dedicated focus on Women’s Health &amp; Cancer Care</li>
 							</ul>
 						</div>
 					</div>
@@ -214,8 +205,7 @@ export default function Home() {
 								</p>
 
 								<p className="mt-1 text-charcoal/60">
-									Supporting meaningful academic and research
-									initiatives.
+									Supporting meaningful academic and research initiatives.
 								</p>
 							</div>
 
@@ -225,19 +215,16 @@ export default function Home() {
 								</p>
 
 								<p className="mt-1 text-charcoal/60">
-									Connecting traditional wisdom with
-									contemporary thinking.
+									Connecting traditional wisdom with contemporary thinking.
 								</p>
 							</div>
 
 							<div>
-								<p className="font-semibold text-forest">
-									Focus Areas
-								</p>
+								<p className="font-semibold text-forest">Focus Areas</p>
 
 								<p className="mt-1 text-charcoal/60">
-									Targeted initiatives in Women’s Health and
-									Cancer Supportive Care.
+									Targeted initiatives in Women’s Health and Cancer Supportive
+									Care.
 								</p>
 							</div>
 						</div>
@@ -276,9 +263,7 @@ export default function Home() {
 								>
 									<div
 										className={`why-pillar-image overflow-hidden rounded-[2rem] ${
-											index % 2 === 0
-												? "lg:order-1"
-												: "lg:order-2"
+											index % 2 === 0 ? "lg:order-1" : "lg:order-2"
 										}`}
 									>
 										<div className="group relative aspect-[4/3] overflow-hidden rounded-[2rem]">
@@ -292,11 +277,7 @@ export default function Home() {
 											<div className="absolute inset-0 bg-gradient-to-t from-forest/40 via-transparent to-transparent" />
 
 											<span className="absolute left-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-forest backdrop-blur-sm">
-												<Icon
-													size={20}
-													strokeWidth={1.5}
-													aria-hidden="true"
-												/>
+												<Icon size={20} strokeWidth={1.5} aria-hidden="true" />
 											</span>
 
 											<span className="absolute bottom-5 right-5 font-display text-3xl text-white/90">
@@ -307,9 +288,7 @@ export default function Home() {
 
 									<div
 										className={`why-pillar-content ${
-											index % 2 === 0
-												? "lg:order-2"
-												: "lg:order-1"
+											index % 2 === 0 ? "lg:order-2" : "lg:order-1"
 										}`}
 									>
 										<div className="flex items-center gap-4">
@@ -320,9 +299,7 @@ export default function Home() {
 											<span className="h-px w-12 bg-forest/20" />
 										</div>
 
-										<h3 className="mt-5 text-2xl lg:text-3xl">
-											{p.title}
-										</h3>
+										<h3 className="mt-5 text-2xl lg:text-3xl">{p.title}</h3>
 
 										<p className="mt-4 max-w-xl text-[0.98rem] leading-7 text-charcoal/70">
 											{p.text}
@@ -351,10 +328,7 @@ export default function Home() {
 						</TextLink>
 					</div>
 
-					<div
-						className="mt-14 grid gap-8 md:grid-cols-3"
-						data-stagger
-					>
+					<div className="mt-14 grid gap-8 md:grid-cols-3" data-stagger>
 						{founders.slice(0, 3).map((f) => (
 							<div key={f.id} className="min-w-0">
 								<FounderCard founder={f} />
