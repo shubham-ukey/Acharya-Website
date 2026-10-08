@@ -20,9 +20,9 @@ export const services = [
 		title: "Thesis to Paper Conversion & Publication",
 		detailTitle: "Thesis to Paper Conversion & Publication",
 		summary:
-			"We transform academic dissertations and post-graduate theses into concise, high-impact manuscripts ready for peer-reviewed medical journals.",
+			"We transform academic dissertations and post-graduate thesis into concise, high-impact manuscripts ready for peer-reviewed medical journals.",
 		description:
-			"We transform academic dissertations and post-graduate theses into concise, high-impact manuscripts ready for peer-reviewed medical journals. We extract core data, restructure methodology, and handle journal formatting so your academic research achieves the indexing and readership it deserves.",
+			"We transform academic dissertations and post-graduate thesis into concise, high-impact manuscripts ready for peer-reviewed medical journals. We extract core data, restructure methodology, and handle journal formatting so your academic research achieves the indexing and readership it deserves.",
 		offerings: [
 			{
 				title: "Thesis analysis",

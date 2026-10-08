@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import {
 	Facebook,
@@ -20,27 +21,51 @@ const socials = [
 ];
 
 const footerServices = [
-	{ label: "Thesis-to-Paper Conversion", hash: "thesis-to-paper" },
-	{ label: "Collaborative Projects", hash: "collaborative-projects" },
-	{ label: "Research Workshops", hash: "workshops-webinars" },
-	{ label: "Ayurveda Consultancy", hash: "ayurveda-consultancy" },
+	{
+		label: "Thesis & Publication",
+		hash: "thesis-to-paper",
+	},
+	{
+		label: "Clinical Writing",
+		hash: "clinical-writing",
+	},
+	{
+		label: "Health Projects & Grants",
+		hash: "collaborative-projects",
+	},
+	{
+		label: "Workshops & Webinars",
+		hash: "workshops-webinars",
+	},
 ];
+
+
 
 export default function Footer() {
 	const colTitle =
 		"text-xs font-semibold uppercase tracking-[0.18em] text-gold";
-	const link = "text-sm text-ivory/70 transition-colors hover:text-ivory";
+
+	const link =
+		"text-sm text-ivory/70 transition-colors hover:text-ivory";
 
 	return (
 		<footer className="bg-forest-deep text-ivory">
 			<div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1.1fr] lg:gap-10">
+
+				{/* BRAND */}
 				<div>
 					<Logo tone="light" />
+
+					{/* COMPANY NAME */}
+					<p className="mt-3 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-wide text-ivory/60">
+						{brand.companyName}
+					</p>
 
 					<p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/70">
 						{brand.description}
 					</p>
 
+					{/* SOCIAL LINKS */}
 					<div className="mt-6 flex gap-3">
 						{socials.map(({ key, Icon, label }) => (
 							<a
@@ -57,6 +82,7 @@ export default function Footer() {
 					</div>
 				</div>
 
+				{/* QUICK LINKS */}
 				<nav aria-label="Quick links">
 					<h2
 						className={`${colTitle} !font-sans`}
@@ -76,6 +102,7 @@ export default function Footer() {
 					</ul>
 				</nav>
 
+				{/* SERVICES */}
 				<nav aria-label="Services">
 					<h2
 						className={`${colTitle} !font-sans`}
@@ -85,16 +112,20 @@ export default function Footer() {
 					</h2>
 
 					<ul className="mt-5 space-y-3">
-						{footerServices.map((s) => (
-							<li key={s.hash}>
-								<Link to={`/services#${s.hash}`} className={link}>
-									{s.label}
+						{footerServices.map((service) => (
+							<li key={service.hash}>
+								<Link
+									to={`/services#${service.hash}`}
+									className={link}
+								>
+									{service.label}
 								</Link>
 							</li>
 						))}
 					</ul>
 				</nav>
 
+				{/* CONTACT */}
 				<div>
 					<h2
 						className={`${colTitle} !font-sans`}
@@ -110,6 +141,7 @@ export default function Footer() {
 								className="mt-0.5 shrink-0 text-gold"
 								aria-hidden="true"
 							/>
+
 							<a
 								className="break-all hover:text-ivory"
 								href={`mailto:${brand.email}`}
@@ -124,6 +156,7 @@ export default function Footer() {
 								className="mt-0.5 shrink-0 text-gold"
 								aria-hidden="true"
 							/>
+
 							<a
 								className="hover:text-ivory"
 								href={`tel:${brand.phone.replace(/\s/g, "")}`}
@@ -138,15 +171,20 @@ export default function Footer() {
 								className="mt-0.5 shrink-0 text-gold"
 								aria-hidden="true"
 							/>
+
 							<span>{brand.location}</span>
 						</li>
 					</ul>
 				</div>
 			</div>
 
+			{/* COPYRIGHT */}
 			<div className="border-t border-ivory/10">
 				<div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ivory/60 sm:flex-row">
-					<p>© 2026 {brand.displayName}. All Rights Reserved.</p>
+					<p>
+						© {new Date().getFullYear()} {brand.displayName}. All Rights Reserved.
+					</p>
+
 					<p>Ayurveda • Yoga • Health Research</p>
 				</div>
 			</div>

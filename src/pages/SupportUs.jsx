@@ -85,11 +85,7 @@ export default function SupportUs() {
 				aria-labelledby="support-hero-heading"
 			>
 				{/* Background banner: mobile + desktop */}
-				<div
-					className="absolute inset-0"
-					data-hero-art
-					aria-hidden="true"
-				>
+				<div className="absolute inset-0" data-hero-art aria-hidden="true">
 					<img
 						src="/banners/support-us.webp"
 						alt=""
@@ -119,10 +115,9 @@ export default function SupportUs() {
 						</h1>
 
 						<p className="lede mt-7" data-hero-fade>
-							There are many ways to contribute to our journey.
-							Share your time, expertise or resources and help us
-							create meaningful impact through research, education
-							and healthcare.
+							There are many ways to contribute to our journey. Share your time,
+							expertise or resources and help us create meaningful impact
+							through research, education and healthcare.
 						</p>
 					</div>
 				</div>
@@ -140,10 +135,9 @@ export default function SupportUs() {
 
 						<p className="mt-6 max-w-2xl text-lg leading-8 text-charcoal/70">
 							At Acharya, we believe meaningful work grows through
-							collaboration. Whether you contribute your skills,
-							time, ideas or financial resources, your support can
-							help us take research and knowledge-driven
-							initiatives forward.
+							collaboration. Whether you contribute your skills, time, ideas or
+							financial resources, your support can help us take research and
+							knowledge-driven initiatives forward.
 						</p>
 					</div>
 
@@ -158,9 +152,7 @@ export default function SupportUs() {
 									<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sage-soft text-forest">
 										<Icon size={20} strokeWidth={1.6} />
 									</span>
-									<span className="font-semibold text-forest">
-										{w.label}
-									</span>
+									<span className="font-semibold text-forest">{w.label}</span>
 								</li>
 							);
 						})}
@@ -170,10 +162,7 @@ export default function SupportUs() {
 
 			{/* OPTIONS */}
 			<section className="pb-16 md:pb-24">
-				<div
-					className="container-x grid gap-6 lg:grid-cols-2"
-					data-stagger
-				>
+				<div className="container-x grid gap-6 lg:grid-cols-2" data-stagger>
 					{supportOptions.map((option) => {
 						const Icon = option.icon;
 
@@ -188,9 +177,7 @@ export default function SupportUs() {
 							>
 								<span
 									className={`absolute right-7 top-6 font-display text-6xl ${
-										option.dark
-											? "text-ivory/10"
-											: "text-forest/10"
+										option.dark ? "text-ivory/10" : "text-forest/10"
 									}`}
 									aria-hidden="true"
 								>
@@ -217,9 +204,7 @@ export default function SupportUs() {
 
 								<p
 									className={`mt-3 leading-7 ${
-										option.dark
-											? "text-ivory/75"
-											: "text-charcoal/70"
+										option.dark ? "text-ivory/75" : "text-charcoal/70"
 									}`}
 								>
 									{option.text}
@@ -230,9 +215,7 @@ export default function SupportUs() {
 										<li
 											key={point}
 											className={`flex items-start gap-3 text-sm ${
-												option.dark
-													? "text-ivory/80"
-													: "text-charcoal/70"
+												option.dark ? "text-ivory/80" : "text-charcoal/70"
 											}`}
 										>
 											<Check
@@ -250,9 +233,7 @@ export default function SupportUs() {
 									<Button
 										to="/contact"
 										arrow
-										variant={
-											option.dark ? "secondary" : undefined
-										}
+										variant={option.dark ? "secondary" : undefined}
 									>
 										{option.action}
 									</Button>
@@ -268,15 +249,10 @@ export default function SupportUs() {
 				<div className="container-x">
 					<div className="mx-auto max-w-2xl text-center" data-reveal>
 						<p className="eyebrow">How It Works</p>
-						<h2 className="h-section mt-5">
-							Getting Involved Is Simple
-						</h2>
+						<h2 className="h-section mt-5">Getting Involved Is Simple</h2>
 					</div>
 
-					<ol
-						className="mt-14 grid gap-6 md:grid-cols-3"
-						data-stagger
-					>
+					<ol className="mt-14 grid gap-6 md:grid-cols-3" data-stagger>
 						{steps.map((s, i) => {
 							const Icon = s.icon;
 							return (
@@ -317,25 +293,32 @@ export default function SupportUs() {
 						/>
 
 						<div className="relative mx-auto max-w-3xl">
-							<p className="eyebrow !text-gold">
-								Let's Collaborate
-							</p>
+							<p className="eyebrow !text-gold">Let's Collaborate</p>
 
 							<h2 className="h-display mt-4 text-3xl !text-ivory md:text-5xl">
 								Your Contribution Can Help Move an Idea Forward
 							</h2>
 
 							<p className="mx-auto mt-5 max-w-2xl leading-7 text-ivory/75">
-								If you are interested in volunteering,
-								collaborating on a project or supporting our
-								initiatives, we would love to hear from you.
+								If you are interested in volunteering, collaborating on a
+								project or supporting our initiatives, we would love to hear
+								from you.
 							</p>
 
 							<div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-								<Button to="/contact" arrow>
+								<Button
+									to="/contact"
+									variant="light"
+									arrow
+									className="w-full sm:w-auto"
+								>
 									Get in Touch
 								</Button>
-								<Button to="/about" variant="secondary">
+								<Button
+									to="/about"
+									variant="outlineLight"
+									className="w-full sm:w-auto"
+								>
 									Learn About Us
 								</Button>
 							</div>
