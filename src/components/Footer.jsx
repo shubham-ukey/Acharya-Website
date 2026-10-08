@@ -22,7 +22,7 @@ const socials = [
 
 const footerServices = [
 	{
-		label: "Thesis & Publication",
+		label: "Thesis to Publication",
 		hash: "thesis-to-paper",
 	},
 	{
