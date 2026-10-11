@@ -30,7 +30,7 @@ export const founders = [
 		initials: "AR",
 		role: "Founder | Ayurveda Physician & Research Consultant",
 		photo:
-			"https://media.istockphoto.com/id/1367507209/photo/portrait-of-indian-female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=1AL-5pTDvbBXL4zVSDSDE0NKBW40RWLjKS-QzU35x5A=",
+			"/images/founders/vd-ankita-left.jpeg",
 		tone: "sage",
 
 		short:
@@ -55,7 +55,7 @@ export const founders = [
 		initials: "PG",
 		role: "Founder | Ayurveda Physician & Researcher",
 		photo:
-			"https://images.unsplash.com/photo-1659353886868-753b0c5c5772?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZlbWFsZSUyMGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+			"/images/founders/VD-Prajakata.webp",
 		tone: "light",
 
 		short:
@@ -78,7 +78,7 @@ export const founders = [
 		name: "Mayur Tambe",
 		initials: "MT",
 		role: "Fractional CXO",
-		photo: "https://images.unsplash.com/photo-1712215544003-af10130f8eb3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+		photo: "/images/founders/Mayur-Tambe.jpeg",
 		tone: "sage",
 
 		short:
