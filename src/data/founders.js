@@ -7,7 +7,7 @@ export const founders = [
 		initials: "RM",
 		role: "Founder | Public Health & Clinical Research",
 		photo:
-			"/images/founders/VD-Reena.png",
+			"/images/founders/VD-Reena-marbate.jpeg",
 		tone: "light",
 
 		short:
