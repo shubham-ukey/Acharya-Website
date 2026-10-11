@@ -87,7 +87,7 @@ export default function SupportUs() {
 				{/* Background banner: mobile + desktop */}
 				<div className="absolute inset-0" data-hero-art aria-hidden="true">
 					<img
-						src="/banners/support-us.webp"
+						src="/banners/support-us.jpeg"
 						alt=""
 						className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
 						data-hero-art-inner

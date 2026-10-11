@@ -59,7 +59,7 @@ export default function Insights() {
 					aria-hidden="true"
 				>
 					<img
-						src="/banners/articles.webp"
+						src="/banners/articles.jpeg"
 						alt=""
 						className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
 						data-hero-art-inner

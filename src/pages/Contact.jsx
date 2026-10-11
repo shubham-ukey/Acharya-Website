@@ -202,7 +202,7 @@ export default function Contact() {
 					aria-hidden="true"
 				>
 					<img
-						src="/banners/contact-us.webp"
+						src="/banners/contact-us.jpeg"
 						alt=""
 						className="h-full w-full object-cover object-[75%_center] lg:object-right"
 						data-hero-art-inner

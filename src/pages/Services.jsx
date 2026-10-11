@@ -31,7 +31,7 @@ export default function Services() {
 					aria-hidden="true"
 				>
 					<img
-						src="/banners/service.webp"
+						src="/banners/service.jpeg"
 						alt=""
 						className="h-full w-full object-cover object-[80%_bottom] lg:object-right"
 						data-hero-art-inner
