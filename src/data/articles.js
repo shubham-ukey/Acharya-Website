@@ -10,126 +10,200 @@
 export const categories = ['Ayurveda', 'Yoga', 'Research', 'Healthcare', 'Clinical Studies', 'Scientific Writing'];
 
 export const articles = [
-  {
-    id: 1,
-    slug: 'ayurveda-modern-research',
-    title: 'Integrating Ayurveda with Modern Research',
-    excerpt: 'Classical Ayurvedic ideas can be studied with modern methods without losing what makes them distinctive. Here is how to begin.',
-    category: 'Ayurveda',
-    author: 'Dr. Aditi Deshmukh',
-    date: '2026-09-12',
-    readTime: '6 min read',
-    image: 'art:sprig',
-    imageAlt: 'Botanical specimen illustration of a medicinal herb with measurement marks',
-    content: `<p>Ayurveda carries centuries of observation about food, medicines, routines and the human constitution. Modern research offers tools to test, refine and communicate that knowledge. The two are not in competition. The real challenge is translation: framing classical ideas as questions that a study can answer.</p>
-<h2>Start with a clear question</h2>
-<p>Terms such as dosha imbalance or agni can be difficult to measure directly. Good integrative research starts by deciding what can be observed: a symptom score, a laboratory value, a functional outcome or a patient-reported measure. The classical concept then guides the intervention and the selection of participants, while the outcome stays measurable.</p>
-<blockquote>The aim is not to make Ayurveda look like biomedicine. It is to make its claims testable.</blockquote>
-<h2>Respect the individualised approach</h2>
-<p>Ayurvedic practice often tailors treatment to the person. This can be built into a protocol through clear, pre-defined rules for how treatment is chosen, so the approach can be reported and repeated by others.</p>
-<h2>Report with transparency</h2>
-<ul><li>Describe the intervention in enough detail to be reproduced, including source texts and preparation methods.</li><li>Use recognised reporting guidelines for the study design.</li><li>Register clinical trials and state limitations openly.</li></ul>
-<p>When these steps are followed, Ayurvedic research becomes easier for peers, journals and clinicians to read, trust and build upon.</p>`,
-  },
-  {
-    id: 2,
-    slug: 'understanding-evidence-based-healthcare',
-    title: 'Understanding Evidence-Based Healthcare',
-    excerpt: 'What evidence-based practice really means, why it matters for traditional medicine, and how clinicians can apply it every day.',
-    category: 'Healthcare',
-    author: 'Dr. Rohan Kulkarni',
-    date: '2026-08-28',
-    readTime: '5 min read',
-    image: 'art:lattice',
-    imageAlt: 'Line chart with confidence band representing clinical evidence',
-    content: `<p>Evidence-based healthcare combines three things: the best available research, the clinician's experience, and the values and circumstances of the patient. It is often misread as research alone. In practice, it is a way of making decisions that stay honest about what is known and what is not.</p>
-<h2>Not all evidence is equal</h2>
-<p>A single case report, a well-designed cohort study and a systematic review of randomised trials answer different questions and carry different weight. Understanding this hierarchy helps clinicians read studies critically and avoid over-stating a result.</p>
-<h2>Why it matters for traditional medicine</h2>
-<p>Traditional systems have a long record of practice but a shorter record of formal trials. Evidence-based thinking gives a shared language for that conversation. It helps identify which practices are well supported, which need more study, and where the research gaps are.</p>
-<h2>Applying it day to day</h2>
-<ol><li>Frame a clear clinical question.</li><li>Search for relevant studies.</li><li>Appraise their quality and relevance.</li><li>Discuss options with the patient.</li><li>Record outcomes so your own practice becomes evidence.</li></ol>
-<p>That last step is where clinicians can make the biggest contribution: careful documentation is the raw material of future research.</p>`,
-  },
-  {
-    id: 3,
-    slug: 'research-methodology-in-ayurveda',
-    title: 'Research Methodology in Ayurveda',
-    excerpt: 'A practical overview of study designs, outcome measures and common pitfalls for researchers working with Ayurvedic interventions.',
-    category: 'Research',
-    author: 'Dr. Rohan Kulkarni',
-    date: '2026-08-10',
-    readTime: '7 min read',
-    image: 'art:rings',
-    imageAlt: 'Concentric circle diagram suggesting a sampling and study design framework',
-    content: `<p>Choosing the right design is the most important decision in any study. Ayurvedic research spans literary review, pharmacognosy, laboratory work, observational studies and clinical trials. Each has its own standards.</p>
-<h2>Match the design to the question</h2>
-<p>A question about how a formulation is described in classical texts needs a literary and conceptual review. A question about whether a therapy improves an outcome needs a comparative clinical design. Using a stronger design than the question needs wastes resources, while a weaker one leaves the question unanswered.</p>
-<h2>Common pitfalls</h2>
-<ul><li>Small samples without a justification for the sample size.</li><li>Outcome measures that do not reflect the condition being treated.</li><li>Unclear descriptions of the intervention.</li><li>Missing ethics approval or trial registration.</li></ul>
-<h2>Plan analysis before collecting data</h2>
-<p>Deciding the primary outcome and statistical approach in advance protects a study from bias and makes the final paper far easier to write. A short pilot can reveal practical problems before they become costly.</p>`,
-  },
-  {
-    id: 4,
-    slug: 'from-thesis-to-manuscript',
-    title: 'From Thesis to Manuscript: A Practical Path to Publication',
-    excerpt: 'A thesis and a journal paper are different documents. Learn how to identify the publishable core and shape it for reviewers.',
-    category: 'Scientific Writing',
-    author: 'Dr. Aditi Deshmukh',
-    date: '2026-07-22',
-    readTime: '6 min read',
-    image: 'art:sprig',
-    imageAlt: 'Botanical illustration representing the growth of a manuscript from raw research',
-    content: `<p>Many postgraduate scholars finish a thesis and then find that it never becomes a paper. The reasons are usually practical: time pressure, uncertainty about structure and unfamiliarity with journal expectations.</p>
-<h2>Find the single story</h2>
-<p>A thesis can hold several questions. A paper needs one main message. Begin by choosing the question your data answers most convincingly, and let everything else support it or move to a second paper.</p>
-<h2>Restructure, don't copy</h2>
-<p>Journal readers expect a short introduction, focused methods, clear results and an honest discussion. Long literature reviews and extended methods must be condensed. Tables and figures should carry as much of the result as possible.</p>
-<h2>Choose the journal early</h2>
-<p>Read the author guidelines before writing. Word limits, reference style and reporting checklists shape how you write. Choosing a journal whose readers care about your question also improves your chances.</p>
-<h2>Prepare for revision</h2>
-<p>Revision requests are a normal part of the process. A polite, point-by-point response that changes the manuscript where reviewers have a fair point is often the difference between rejection and acceptance.</p>`,
-  },
-  {
-    id: 5,
-    slug: 'designing-credible-yoga-studies',
-    title: 'Studying Yoga as an Intervention: Designing Credible Studies',
-    excerpt: 'Yoga is easy to practise and hard to standardise. This piece looks at how researchers can define, deliver and measure it well.',
-    category: 'Yoga',
-    author: 'Dr. Meera Iyer',
-    date: '2026-07-05',
-    readTime: '5 min read',
-    image: 'art:rings',
-    imageAlt: 'Concentric circles symbolising breath and structured practice',
-    content: `<p>Yoga can include postures, breathing practices, meditation, lifestyle guidance or all of these together. That flexibility is a strength in practice but a challenge in research, because a study must say exactly what participants did.</p>
-<h2>Define the intervention</h2>
-<p>Specify the practices, their order, duration, frequency and level of supervision. Name the tradition or text if you follow one. Another researcher should be able to deliver the same programme from your description.</p>
-<h2>Choose meaningful outcomes</h2>
-<p>Select outcomes that match the purpose of the programme, such as pain scores, sleep quality, stress measures or physical function. Combine patient-reported outcomes with objective measures where possible.</p>
-<h2>Plan for adherence</h2>
-<p>Attendance and home practice strongly affect results. Record them, and consider how you will handle participants who stop early. Reporting adherence honestly makes the findings more useful.</p>`,
-  },
-  {
-    id: 6,
-    slug: 'designing-clinical-studies-ayurvedic-interventions',
-    title: 'Designing Clinical Studies for Ayurvedic Interventions',
-    excerpt: 'Trial registration, ethics, blinding and documentation: the essentials to get right before recruiting your first participant.',
-    category: 'Clinical Studies',
-    author: 'Dr. Rohan Kulkarni',
-    date: '2026-06-18',
-    readTime: '8 min read',
-    image: 'art:molecule',
-    imageAlt: 'Chemical structure diagram representing a standardised formulation',
-    content: `<p>A clinical study is judged as much by its preparation as by its results. The steps below apply whether you are testing a classical formulation, a procedure or a lifestyle programme.</p>
-<h2>Protocol and ethics</h2>
-<p>Write a protocol that states the objective, eligibility, intervention, outcomes and analysis plan. Obtain approval from an institutional ethics committee before enrolling participants, and use clear informed-consent materials.</p>
-<h2>Registration</h2>
-<p>Prospectively registering a trial in a recognised registry supports transparency and is expected by most journals.</p>
-<h2>Standardise and document the intervention</h2>
-<p>For herbal or herbo-mineral products, record the source of ingredients, preparation method and quality checks. For procedures, describe steps and practitioner qualifications.</p>
-<h2>Consider blinding and comparison</h2>
-<p>Where blinding is not possible, say so and take other steps to limit bias, such as objective outcomes and independent assessment.</p>
-<blockquote>A study designed with care is easier to defend, easier to publish and easier for others to replicate.</blockquote>`,
-  },
+  
+
+{
+  id: 1,
+  slug: 'care-consort-prisma-reporting-guidelines',
+  title: 'CARE, CONSORT, and PRISMA: Choosing the Right Framework for Clinical Research Publication',
+  excerpt: 'Choosing the right reporting guideline is essential for transparent scientific publication. Learn how CARE, CONSORT, and PRISMA support case reports, clinical trials, and systematic reviews.',
+  category: 'Research',
+  author: 'VD. Prajakta Giratkar',
+  date: '2026-10-15',
+  readTime: '9 min read',
+  image: '/images/articles/care-consert-prisama.png',
+  imageAlt: 'Scientific illustration representing structured clinical research and evidence reporting',
+  content: `<p>Clinical practice and biomedical research generate valuable insights, but transforming these observations into a publishable manuscript requires more than presenting promising results. Researchers must clearly describe their methods, document their findings, and provide enough information for readers to understand how conclusions were reached.</p>
+
+<p>Reporting guidelines provide structured recommendations for communicating research. Three widely used frameworks are CARE, CONSORT, and PRISMA. Although all three aim to improve reporting transparency, each serves a different type of research publication.</p>
+
+<h2>Why Reporting Guidelines Matter</h2>
+<p>A scientific manuscript should allow readers to understand what was studied, how the work was conducted, what was observed, and what limitations affect the interpretation. Missing methodological details can make findings difficult to evaluate or reproduce.</p>
+
+<p>Reporting guidelines help authors identify essential information before submitting their manuscripts. The appropriate guideline depends on the research design, rather than simply the subject area or the journal in which the work will appear.</p>
+
+<h2>CARE: Reporting Clinical Case Reports</h2>
+<p>CARE stands for CAse REport. The CARE guidelines support transparent reporting of individual clinical cases, including unusual presentations, diagnostic challenges, unexpected outcomes, and clinically informative observations.</p>
+
+<p>A case report documents the clinical course of an individual patient. It should present the relevant history, examination findings, diagnostic reasoning, therapeutic interventions, follow-up, and outcomes in a clear and organised manner.</p>
+
+<h3>Important Elements of a CARE-Based Report</h3>
+<ul>
+<li><strong>Patient information:</strong> Include relevant medical history and clinical context while protecting patient confidentiality.</li>
+<li><strong>Clinical findings:</strong> Describe important examination findings and diagnostic results.</li>
+<li><strong>Timeline:</strong> Present the sequence of symptoms, investigations, interventions, and follow-up.</li>
+<li><strong>Diagnostic assessment:</strong> Explain the diagnostic reasoning and relevant challenges.</li>
+<li><strong>Therapeutic intervention:</strong> Describe treatment details, dosage, duration, and other relevant information.</li>
+<li><strong>Follow-up and outcomes:</strong> Report clinical progress, relevant changes, and adverse events.</li>
+<li><strong>Patient perspective and consent:</strong> Include the patient's perspective where available and address consent for publication according to applicable requirements.</li>
+</ul>
+
+<h3>Applying CARE to Ayurveda and Integrative Healthcare</h3>
+<p>For a case report involving an Ayurvedic intervention, authors should describe the intervention precisely. Relevant details may include the formulation, ingredients, preparation, dosage, duration, concurrent treatments, outcome measures, and follow-up.</p>
+
+<p>Authors should distinguish observations from interpretations. An improvement following an intervention does not, by itself, establish that the intervention caused the improvement.</p>
+
+<p><strong>When to use CARE:</strong> Use the applicable CARE guidance when preparing a report about an individual patient's clinical presentation, management, and outcome.</p>
+
+<h2>CONSORT: Reporting Randomized Controlled Trials</h2>
+<p>CONSORT stands for Consolidated Standards of Reporting Trials. It supports transparent reporting of randomized controlled trials (RCTs), which commonly compare an intervention with a placebo, an active treatment, or standard care.</p>
+
+<p>Because randomized trials involve participant allocation and planned comparisons, the manuscript must explain how participants entered the study, how treatment groups were formed, which outcomes were assessed, and how the results were analysed.</p>
+
+<h3>Important Elements of a CONSORT-Based Report</h3>
+<ul>
+<li><strong>Trial design:</strong> Describe the design, allocation ratio, and relevant methodological details.</li>
+<li><strong>Participants:</strong> Report eligibility criteria, recruitment settings, and participant characteristics.</li>
+<li><strong>Randomization:</strong> Explain sequence generation and allocation concealment.</li>
+<li><strong>Interventions:</strong> Describe the treatments or procedures assigned to each group.</li>
+<li><strong>Outcomes:</strong> Define the primary and secondary outcomes and when they were measured.</li>
+<li><strong>Sample size:</strong> Explain how the planned sample size was determined.</li>
+<li><strong>Statistical methods:</strong> Describe the analyses used to compare groups.</li>
+<li><strong>Results:</strong> Report participant flow, outcome findings, effect estimates, and precision.</li>
+<li><strong>Safety:</strong> Report relevant adverse events and other important unintended effects.</li>
+<li><strong>Registration and ethics:</strong> Include trial registration, ethics information, funding, and disclosures where applicable.</li>
+</ul>
+
+<h3>Understanding the CONSORT Flow Diagram</h3>
+<p>The participant flow diagram summarises the movement of participants through the trial. It typically reports how many people were assessed for eligibility, randomized, allocated to each group, followed up, and included in the analyses.</p>
+
+<p>Reasons for exclusions and losses to follow-up should be reported clearly. This information helps readers understand the completeness of the data and assess potential sources of bias.</p>
+
+<h3>Applying CONSORT to Ayurveda Clinical Trials</h3>
+<p>When studying an Ayurvedic formulation, procedure, or structured lifestyle intervention in a randomized trial, researchers should describe the intervention and comparison group in sufficient detail. They should also report randomization procedures, outcome measures, adherence, withdrawals, and relevant safety findings.</p>
+
+<p><strong>When to use CONSORT:</strong> Use the applicable CONSORT statement and relevant extensions when reporting a randomized controlled trial.</p>
+
+<h2>PRISMA: Reporting Systematic Reviews and Meta-Analyses</h2>
+<p>PRISMA stands for Preferred Reporting Items for Systematic Reviews and Meta-Analyses. It helps researchers report systematic reviews transparently, including how evidence was identified, selected, assessed, and synthesised.</p>
+
+<p>A systematic review uses planned methods to answer a focused research question by identifying and evaluating relevant studies. A meta-analysis is a statistical technique that may be used to combine results when the available studies and data are sufficiently suitable. Not every systematic review includes a meta-analysis.</p>
+
+<h3>Important Elements of a PRISMA-Based Review</h3>
+<ul>
+<li><strong>Review question:</strong> Clearly define the objective and rationale for the review.</li>
+<li><strong>Eligibility criteria:</strong> Specify the characteristics studies must meet to be included.</li>
+<li><strong>Information sources:</strong> Identify databases, registers, and other sources searched.</li>
+<li><strong>Search strategy:</strong> Document search terms and methods so the search can be understood and reproduced.</li>
+<li><strong>Study selection:</strong> Explain screening procedures and reasons for excluding full-text reports.</li>
+<li><strong>Data collection:</strong> Describe how information was extracted from included studies.</li>
+<li><strong>Risk of bias:</strong> Explain how the methodological limitations of included studies were assessed.</li>
+<li><strong>Synthesis methods:</strong> Describe how evidence was summarised and how any meta-analysis was performed.</li>
+<li><strong>Results:</strong> Present the characteristics of included studies and the main findings.</li>
+<li><strong>Limitations:</strong> Discuss limitations of both the available evidence and the review process.</li>
+<li><strong>Registration and protocol:</strong> Report protocol registration and access details where applicable.</li>
+</ul>
+
+<h3>Understanding the PRISMA Flow Diagram</h3>
+<p>The PRISMA flow diagram summarises the review selection process. It shows the number of records identified, screened, excluded, and retained for further assessment, along with the number of studies ultimately included.</p>
+
+<p>Recording exclusion reasons and documenting the selection process helps readers understand how the final evidence base was assembled.</p>
+
+<h3>Applying PRISMA to Ayurveda Research</h3>
+<p>Systematic reviews in Ayurveda and integrative healthcare may examine clinical trials, observational studies, formulations, or structured interventions. Authors should define eligibility criteria carefully and document how variations in terminology, intervention descriptions, study designs, and outcome measures were handled.</p>
+
+<p>When studies differ substantially, authors should explain those differences and avoid combining results inappropriately. Conclusions should reflect the strength and limitations of the available evidence.</p>
+
+<p><strong>When to use PRISMA:</strong> Use the relevant PRISMA guidance when reporting a systematic review or meta-analysis.</p>
+
+<h2>Comparing CARE, CONSORT, and PRISMA</h2>
+<p>Although these frameworks share the goal of transparent reporting, they address different research designs. The following table summarises their main differences.</p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CARE</th>
+<th>CONSORT</th>
+<th>PRISMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full name</strong></td>
+<td>CAse REport</td>
+<td>Consolidated Standards of Reporting Trials</td>
+<td>Preferred Reporting Items for Systematic Reviews and Meta-Analyses</td>
+</tr>
+<tr>
+<td><strong>Primary purpose</strong></td>
+<td>Transparent reporting of individual clinical cases</td>
+<td>Transparent reporting of randomized trials</td>
+<td>Transparent reporting of systematic reviews and meta-analyses</td>
+</tr>
+<tr>
+<td><strong>Typical publication</strong></td>
+<td>Clinical case report</td>
+<td>Randomized controlled trial</td>
+<td>Systematic review or meta-analysis</td>
+</tr>
+<tr>
+<td><strong>Main focus</strong></td>
+<td>Patient history, clinical findings, interventions, and outcomes</td>
+<td>Randomization, participant flow, interventions, outcomes, and analyses</td>
+<td>Search methods, study selection, evidence assessment, and synthesis</td>
+</tr>
+<tr>
+<td><strong>Key reporting aid</strong></td>
+<td>Case-report checklist and clinical timeline</td>
+<td>Reporting checklist and participant flow diagram</td>
+<td>Reporting checklist and study-selection flow diagram</td>
+</tr>
+<tr>
+<td><strong>Best time to consult</strong></td>
+<td>While planning and writing a case report</td>
+<td>During trial planning and manuscript preparation</td>
+<td>While planning and reporting a systematic review</td>
+</tr>
+</tbody>
+</table>
+
+<h2>How to Choose the Right Reporting Guideline</h2>
+<p>Start by identifying the design of your research. The type of evidence you are reporting determines which framework is most relevant.</p>
+
+<ol>
+<li><strong>Reporting one patient's clinical experience?</strong> Consult CARE.</li>
+<li><strong>Reporting a randomized controlled trial?</strong> Consult CONSORT.</li>
+<li><strong>Synthesising evidence from multiple studies in a systematic review?</strong> Consult PRISMA.</li>
+<li><strong>Working with a specialised design?</strong> Check whether a relevant extension or another reporting guideline applies.</li>
+<li><strong>Preparing for journal submission?</strong> Review the target journal's author instructions and confirm which checklist it requests.</li>
+</ol>
+
+<h2>Common Reporting Challenges</h2>
+<p>Researchers may overlook important details when they begin writing without consulting a suitable reporting guideline. Common problems include incomplete intervention descriptions, unclear outcome definitions, missing participant-flow information, insufficient search details, and conclusions that exceed the findings.</p>
+
+<p>Another common misunderstanding is treating reporting guidelines as a measure of research quality by themselves. A complete manuscript can still describe a study with methodological limitations. Reporting guidelines improve transparency, but they do not replace sound study design, appropriate ethical review, critical appraisal, or suitable statistical methods.</p>
+
+<h2>A Practical Checklist Before Submission</h2>
+<ul>
+<li>Identify the research design and select the appropriate reporting guideline.</li>
+<li>Use the current version and any relevant extensions.</li>
+<li>Check that all required methods and results are reported.</li>
+<li>Verify tables, figures, timelines, and flow diagrams.</li>
+<li>Confirm that limitations and potential sources of bias are discussed.</li>
+<li>Review ethical requirements, consent, registration, and disclosures as applicable.</li>
+<li>Complete the relevant checklist and follow the target journal's submission instructions.</li>
+</ul>
+
+<h2>Bridging Clinical Practice with Scientific Publication</h2>
+<p>Clinical observations and research findings become more useful when they are documented and reported transparently. CARE, CONSORT, and PRISMA offer practical structures for communicating individual cases, randomized trials, and systematic reviews, respectively.</p>
+
+<p>For researchers working in Ayurveda, yoga, and integrative healthcare, choosing the right framework early can make manuscript preparation more systematic and help readers interpret findings in context.</p>
+
+<h2>Conclusion</h2>
+<p>The appropriate reporting guideline depends on the research design. CARE supports clinical case reports, CONSORT supports randomized controlled trial reports, and PRISMA supports systematic reviews and meta-analyses. Consulting the relevant checklist during manuscript preparation helps authors communicate their work more completely and clearly.</p>
+
+<p>Before submission, consult the official resources for <a href="https://www.care-statement.org/" target="_blank" rel="noopener noreferrer">CARE</a>, <a href="https://www.consort-statement.org/" target="_blank" rel="noopener noreferrer">CONSORT</a>, and <a href="https://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">PRISMA</a>, along with the requirements of the intended journal.</p>`
+}
+
 ];
