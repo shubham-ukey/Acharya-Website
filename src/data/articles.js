@@ -117,7 +117,7 @@ export const articles = [
   title: 'The Importance of Research in Ayurveda: Bridging Ancient Wisdom and Modern Science',
   excerpt: 'A philosophical explanation and a scientifically established finding are not the same. Research is the bridge between traditional knowledge and evidence that can be evaluated, reproduced, and applied responsibly.',
   category: 'Research',
-  author: 'Dr. Prajakta Giratkar',
+  author: 'Dr. Reena Marbate',
   date: '2026-10-25',
   readTime: '3 min read',
   image: '/images/articles/importance-of-research-in-ayurveda.png',
