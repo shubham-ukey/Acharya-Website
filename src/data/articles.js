@@ -120,7 +120,7 @@ export const articles = [
   author: 'Dr. Reena Marbate',
   date: '2026-10-25',
   readTime: '3 min read',
-  image: '/images/articles/importance-of-research-in-ayurveda.png',
+  image: '/images/articles/importance-of-research-in-ayurveda.jpeg',
   imageAlt: 'Illustration representing research bridging Ayurveda and modern science',
   content: `<p>Human curiosity has always extended beyond what we can see, touch, or measure. From contemplating the origin of the universe to exploring the intricacies of the human body, we have continuously sought answers to fundamental questions: How did life begin? How does the human body function? What defines consciousness? Where does the mind reside? And what gives meaning to our existence?</p>
 
