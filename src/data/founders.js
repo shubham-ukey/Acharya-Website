@@ -55,7 +55,7 @@ export const founders = [
 		initials: "PG",
 		role: "Founder | Ayurveda Physician & Researcher",
 		photo:
-			"/images/founders/VD-Prajakata.webp",
+			"/images/founders/vd-praju.png",
 		tone: "light",
 
 		short:
