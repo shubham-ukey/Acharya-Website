@@ -98,4 +98,25 @@ export const founders = [
 
 		linkedin: "https://www.linkedin.com/in/neuromayur",
 	},
+	{
+    id: "vivek-shukla",
+    name: "Dr. Vivek Shukla",
+    initials: "VS",
+    role: "Founder | Medical Officer & Healthcare Professional",
+    photo: "/images/founders/Dr-Vivek-sukla.jpeg",
+    tone: "light",
+
+    short:
+        "A qualified medical professional with expertise in Ayurvedic medicine and postgraduate medical education. Currently serving as a Medical Officer under the Government of Uttar Pradesh since 2020.",
+
+    background: [
+        "BAMS – Institute of Medical Sciences (IMS), Banaras Hindu University (BHU)",
+        "MS – Maharashtra University of Health Sciences (MUHS)",
+        "Medical Officer – Government of Uttar Pradesh (Since 2020)",
+    ],
+
+    bio: "Dr. Vivek Shukla is a qualified medical professional with an academic background in Ayurvedic medicine and postgraduate medical education. He holds a Bachelor of Ayurvedic Medicine and Surgery (BAMS) from the Institute of Medical Sciences, Banaras Hindu University (BHU), and a Master of Surgery (MS) from Maharashtra University of Health Sciences (MUHS). Since 2020, he has been serving as a Medical Officer under the Government of Uttar Pradesh, contributing to public healthcare services and medical practice.",
+
+    linkedin: "",
+}
 ];
