@@ -14,7 +14,6 @@ export const brand = {
 		"Research-driven consultancy in Ayurveda, Yoga and healthcare, helping transform knowledge, clinical experience and ideas into meaningful scientific outcomes.",
 	domain: "https://www.ayurvista.example",
 	logo: null,
-	companyName:"ASSEMBLY CENTRE FOR HEALTH AND RESEARCH IN YOG AND AYURVEDA LLP",
 
 	email: "acharya.apr@gmail.com",
 	phone: "+91 88306 03975",
