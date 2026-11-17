@@ -102,7 +102,7 @@ export const founders = [
     id: "vivek-shukla",
     name: "Dr. Vivek Shukla",
     initials: "VS",
-    role: "Founder | Medical Officer & Healthcare Professional",
+    role: "Mentor | Medical Officer & Healthcare Professional",
     photo: "/images/founders/Dr-Vivek-sukla.jpeg",
     tone: "light",
 
